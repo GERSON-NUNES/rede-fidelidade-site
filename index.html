@@ -5,68 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rede Fidelidade</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Adicionando Bootstrap para responsividade -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
 </head>
 <body>
     <!-- Cabeçalho -->
-    <header>
-        <div class="logo-container">
-            <img src="logo.png" alt="Logo Rede Fidelidade" id="logo">
+    <header class="bg-dark text-white py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo Rede Fidelidade" id="logo" class="img-fluid" style="max-height: 60px;">
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a href="#home" class="nav-link text-white">Home</a></li>
+                    <li class="nav-item"><a href="#programacao" class="nav-link text-white">Programação</a></li>
+                    <li class="nav-item"><a href="#noticias" class="nav-link text-white">Notícias</a></li>
+                    <li class="nav-item"><a href="#contato" class="nav-link text-white">Contato</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#programas">Programas</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <!-- Seção Inicial -->
-    <section id="home">
-        <h1>Bem-vindos à Rede Fidelidade</h1>
-        <p>Conexão Além das Redes Sociais.</p>
-        <!-- Banners Posicionados no Topo -->
-        <div class="banner-container">
-            <img src="banner1.png" alt="Banner Principal" class="banner-img">
-            <img src="banner2.png" alt="Banner Secundário" class="banner-img">
+    <!-- Página Inicial -->
+    <section id="home" class="py-5">
+        <div class="container text-center">
+            <h1>Bem-vindos à Rede Fidelidade</h1>
+            <p>Conexão Além das Redes Sociais.</p>
+            <div class="mt-4">
+                <a href="#" class="btn btn-primary">Ouça ao Vivo</a>
+            </div>
         </div>
     </section>
 
-    <!-- Sobre Nós -->
-    <section id="sobre">
-        <h2>Sobre nós</h2>
-        <p>A Rede Fidelidade é uma plataforma de comunicação que oferece conteúdo para diferentes públicos.</p>
+    <!-- Programação -->
+    <section id="programacao" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Programação</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Voz da Cidade</h4>
+                    <p>Segunda a Sexta - 10h</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Musical Gospel</h4>
+                    <p>Segunda a Sexta - 14h</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Fidelidade com Deus</h4>
+                    <p>Domingo - 18h</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Nossos Programas -->
-    <section id="programas">
-        <h2>Nossos Programas</h2>
-        <ul>
-            <li>Fidelidade Pod Cast</li>
-            <li>Musical Gospel</li>
-            <li>Fidelidade Notícias</li>
-            <li>Fala Seco</li>
-            <li>Fidelidade com Deus</li>
-            <li>Voz da Cidade</li>
-            <li>Fidelidade Musical</li>
-        </ul>
+    <!-- Notícias -->
+    <section id="noticias" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Notícias e Atualizações</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Evento Especial</h4>
+                    <p>Participe do evento ao vivo no próximo sábado.</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>Mensagem do Dia</h4>
+                    <p>“Confie no Senhor de todo o coração” - Provérbios 3:5</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Contato -->
-    <section id="contato">
-        <h2>Contato</h2>
-        <p>Email: contato@redefidelidade.com.br</p>
+    <section id="contato" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Contato</h2>
+            <form action="#" method="post">
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" name="nome" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="mensagem" class="form-label">Mensagem</label>
+                    <textarea class="form-control" id="mensagem" name="mensagem" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
     </section>
 
     <!-- Rodapé -->
-    <footer>
+    <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2024 Rede Fidelidade. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
 
 
 
