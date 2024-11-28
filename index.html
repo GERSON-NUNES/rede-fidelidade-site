@@ -5,8 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rede Fidelidade</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Adicione Bootstrap para responsividade -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        /* Estilo personalizado */
+        body {
+            background-color: #000; /* Fundo geral preto */
+            color: #fff;
+        }
+
+        .bg-dark {
+            background-color: #000 !important; /* Fundo preto no menu */
+        }
+
+        .logo-container img {
+            border-radius: 50%; /* Logo redonda */
+            border: 2px solid #fff; /* Borda branca ao redor */
+        }
+
+        .carousel-inner img {
+            max-height: 400px; /* Altura padrão para os banners */
+            object-fit: cover; /* Ajuste automático para não distorcer */
+        }
+
+        iframe {
+            width: 100%;
+            height: 315px; /* Tamanho dos vídeos do YouTube */
+            border: none;
+        }
+
+        .btn-radio {
+            background-color: #d9534f;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        .btn-radio:hover {
+            background-color: #c9302c;
+        }
+    </style>
 </head>
 <body>
     <!-- Cabeçalho -->
@@ -51,22 +90,27 @@
             <div class="row">
                 <div class="col-md-4">
                     <h4>Voz da Cidade</h4>
-                    <p>Segunda a Sexta - 10h</p>
+                    <iframe src="https://www.youtube.com/embed/EXEMPLO1" allowfullscreen></iframe>
                 </div>
                 <div class="col-md-4">
                     <h4>Musical Gospel</h4>
-                    <p>Segunda a Sexta - 14h</p>
+                    <iframe src="https://www.youtube.com/embed/EXEMPLO2" allowfullscreen></iframe>
                 </div>
                 <div class="col-md-4">
                     <h4>Fidelidade com Deus</h4>
-                    <p>Domingo - 18h</p>
+                    <iframe src="https://www.youtube.com/embed/EXEMPLO3" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Botão de Transmissão de Áudio -->
+    <div class="text-center my-4">
+        <a href="https://www.youtube.com/embed/EXEMPLO1" class="btn btn-radio">Ouça ao Vivo</a>
+    </div>
+
     <!-- Notícias -->
-    <section id="noticias" class="py-5 bg-light">
+    <section id="noticias" class="py-5 bg-light text-dark">
         <div class="container">
             <h2 class="text-center">Notícias e Atualizações</h2>
             <div class="row">
@@ -112,6 +156,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
 
