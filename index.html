@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rede Fidelidade</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <style>
         /* Estilo personalizado */
         body {
-            background-color: #000; /* Fundo geral preto */
+            background-color: #000; /* Fundo preto */
             color: #fff;
         }
 
@@ -19,17 +18,14 @@
 
         .logo-container img {
             border-radius: 50%; /* Logo redonda */
-            border: 2px solid #fff; /* Borda branca ao redor */
-        }
-
-        .carousel-inner img {
-            max-height: 400px; /* Altura padrão para os banners */
-            object-fit: cover; /* Ajuste automático para não distorcer */
+            border: 2px solid #fff; /* Borda branca */
+            max-height: 100px; /* Altura máxima para manter proporção */
+            width: auto;
         }
 
         iframe {
             width: 100%;
-            height: 315px; /* Tamanho dos vídeos do YouTube */
+            height: 315px; /* Dimensão padrão dos vídeos do YouTube */
             border: none;
         }
 
@@ -52,7 +48,7 @@
     <header class="bg-dark text-white py-3">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="logo-container">
-                <img src="logo.png" alt="Logo Rede Fidelidade" id="logo" class="img-fluid" style="max-height: 60px;">
+                <img src="logo.png" alt="Logo Rede Fidelidade" class="img-fluid">
             </div>
             <nav>
                 <ul class="nav">
@@ -65,22 +61,15 @@
         </div>
     </header>
 
-    <!-- Banner Rotativo -->
-    <section id="banner" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="banner1.png" class="d-block w-100" alt="Banner 1">
-            </div>
-            <div class="carousel-item">
-                <img src="banner2.png" class="d-block w-100" alt="Banner 2">
+    <!-- Página Inicial -->
+    <section id="home" class="py-5">
+        <div class="container text-center">
+            <h1>Bem-vindos à Rede Fidelidade</h1>
+            <p>Conexão Além das Redes Sociais.</p>
+            <div class="mt-4">
+                <a href="https://youtu.be/FMtFziNEcsw" class="btn btn-radio">Ouça ao Vivo</a>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#banner" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </a>
-        <a class="carousel-control-next" href="#banner" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </a>
     </section>
 
     <!-- Programação -->
@@ -89,25 +78,34 @@
             <h2 class="text-center">Programação</h2>
             <div class="row">
                 <div class="col-md-4">
-                    <h4>Voz da Cidade</h4>
-                    <iframe src="https://www.youtube.com/embed/EXEMPLO1" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/FMtFziNEcsw" allowfullscreen></iframe>
+                    <h5>Programa 1</h5>
                 </div>
                 <div class="col-md-4">
-                    <h4>Musical Gospel</h4>
-                    <iframe src="https://www.youtube.com/embed/EXEMPLO2" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/esyniEFeUhA" allowfullscreen></iframe>
+                    <h5>Programa 2</h5>
                 </div>
                 <div class="col-md-4">
-                    <h4>Fidelidade com Deus</h4>
-                    <iframe src="https://www.youtube.com/embed/EXEMPLO3" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/9VT_jyYkM-g" allowfullscreen></iframe>
+                    <h5>Programa 3</h5>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <iframe src="https://www.youtube.com/embed/914EvDv7x0A" allowfullscreen></iframe>
+                    <h5>Programa 4</h5>
+                </div>
+                <div class="col-md-4">
+                    <iframe src="https://www.youtube.com/embed/FMtFziNEcsw" allowfullscreen></iframe>
+                    <h5>Programa 5</h5>
+                </div>
+                <div class="col-md-4">
+                    <iframe src="https://www.youtube.com/embed/esyniEFeUhA" allowfullscreen></iframe>
+                    <h5>Programa 6</h5>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Botão de Transmissão de Áudio -->
-    <div class="text-center my-4">
-        <a href="https://www.youtube.com/embed/EXEMPLO1" class="btn btn-radio">Ouça ao Vivo</a>
-    </div>
 
     <!-- Notícias -->
     <section id="noticias" class="py-5 bg-light text-dark">
@@ -156,6 +154,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
 
