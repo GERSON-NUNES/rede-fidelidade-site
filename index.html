@@ -23,31 +23,6 @@
             width: auto;
         }
 
-        .logo-container h1 {
-            font-size: 2rem; /* Destaque para "Rede Fidelidade" */
-            font-weight: bold;
-            margin: 0;
-        }
-
-        .logo-container p {
-            font-size: 1rem; /* Mesmo tamanho e estilo do menu */
-            color: #d4af37; /* Cor dourada */
-        }
-
-        .btn-radio {
-            background-color: #d9534f;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            margin-left: 20px;
-        }
-
-        .btn-radio:hover {
-            background-color: #c9302c;
-        }
-
         .carousel-inner img {
             width: 100%;
             height: 400px; /* Altura padrão para os banners */
@@ -64,30 +39,28 @@
             width: 300px; /* Largura menor para os vídeos */
             height: 200px;
             flex-shrink: 0;
-        }
-
-        .video-carousel-container {
-            position: relative;
-        }
-
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 50%;
             cursor: pointer;
         }
 
-        .carousel-btn.left {
-            left: 0;
+        .footer {
+            background-color: #111;
+            padding: 20px 10px;
         }
 
-        .carousel-btn.right {
-            right: 0;
+        .footer h5 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .footer p,
+        .footer a {
+            font-size: 0.9rem;
+            color: #d4af37;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -109,7 +82,7 @@
                     <li class="nav-item"><a href="#noticias" class="nav-link text-white">Notícias</a></li>
                     <li class="nav-item"><a href="#contato" class="nav-link text-white">Contato</a></li>
                 </ul>
-                <a href="https://youtu.be/FMtFziNEcsw" class="btn btn-radio">Ouça ao Vivo</a>
+                <a href="audio-live-stream-url" class="btn btn-radio ms-3">Ouça ao Vivo</a>
             </nav>
         </div>
     </header>
@@ -139,60 +112,68 @@
     <section id="programacao" class="py-5">
         <div class="container">
             <h2 class="text-center">Programação</h2>
-            <div class="video-carousel-container">
-                <button class="carousel-btn left" onclick="scrollLeft()">&#9664;</button>
-                <div class="video-carousel">
-                    <iframe src="https://www.youtube.com/embed/FMtFziNEcsw" allowfullscreen></iframe>
-                    <iframe src="https://www.youtube.com/embed/esyniEFeUhA" allowfullscreen></iframe>
-                    <iframe src="https://www.youtube.com/embed/9VT_jyYkM-g" allowfullscreen></iframe>
-                    <iframe src="https://www.youtube.com/embed/914EvDv7x0A" allowfullscreen></iframe>
-                </div>
-                <button class="carousel-btn right" onclick="scrollRight()">&#9654;</button>
+            <div class="video-carousel">
+                <iframe src="https://www.youtube.com/embed/FMtFziNEcsw" allowfullscreen onclick="openVideo('https://www.youtube.com/embed/FMtFziNEcsw')"></iframe>
+                <iframe src="https://www.youtube.com/embed/esyniEFeUhA" allowfullscreen onclick="openVideo('https://www.youtube.com/embed/esyniEFeUhA')"></iframe>
+                <iframe src="https://www.youtube.com/embed/9VT_jyYkM-g" allowfullscreen onclick="openVideo('https://www.youtube.com/embed/9VT_jyYkM-g')"></iframe>
+                <iframe src="https://www.youtube.com/embed/914EvDv7x0A" allowfullscreen onclick="openVideo('https://www.youtube.com/embed/914EvDv7x0A')"></iframe>
             </div>
         </div>
     </section>
 
-    <!-- Contato -->
-    <section id="contato" class="py-5">
-        <div class="container">
-            <h2 class="text-center">Contato</h2>
-            <form action="#" method="post">
-                <div class="mb-3">
-                    <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome" name="nome" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="mensagem" class="form-label">Mensagem</label>
-                    <textarea class="form-control" id="mensagem" name="mensagem" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
-        </div>
-    </section>
-
     <!-- Rodapé -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 Rede Fidelidade. Todos os direitos reservados.</p>
+    <footer class="footer text-white text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Contato</h5>
+                    <p>Email: contato@redefidelidade.com.br</p>
+                    <p>Telefone: (61) 1234-5678</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Links Úteis</h5>
+                    <a href="#programacao">Programação</a> |
+                    <a href="#noticias">Notícias</a> |
+                    <a href="#contato">Contato</a>
+                </div>
+                <div class="col-md-4">
+                    <h5>Siga-nos</h5>
+                    <a href="#"><img src="facebook-icon.png" alt="Facebook" style="width: 30px;"></a>
+                    <a href="#"><img src="instagram-icon.png" alt="Instagram" style="width: 30px;"></a>
+                    <a href="#"><img src="youtube-icon.png" alt="YouTube" style="width: 30px;"></a>
+                </div>
+            </div>
+            <p class="mt-3">© 2024 Rede Fidelidade. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
-        function scrollLeft() {
-            const carousel = document.querySelector('.video-carousel');
-            carousel.scrollBy({ left: -300, behavior: 'smooth' });
-        }
-
-        function scrollRight() {
-            const carousel = document.querySelector('.video-carousel');
-            carousel.scrollBy({ left: 300, behavior: 'smooth' });
+        function openVideo(url) {
+            const modal = new bootstrap.Modal(document.getElementById('videoModal'));
+            const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = `<iframe src="${url}" width="100%" height="400px" allowfullscreen></iframe>`;
+            modal.show();
         }
     </script>
+
+    <!-- Modal para Vídeos -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalLabel">Assistir Vídeo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <!-- Vídeo será carregado aqui -->
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+
 
 
 
