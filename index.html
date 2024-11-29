@@ -189,31 +189,59 @@
         </div>
     </section>
 
-    <!-- Rodapé -->
-    <footer class="footer text-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5 class="dourado">Contato</h5>
-                    <p>Email: contato@redefidelidade.com.br</p>
-                    <p>Telefone: (77) 99810-8891</p>
-                </div>
-                <div class="col-md-4">
-                    <h5 class="dourado">Links Úteis</h5>
-                    <a href="#programacao" class="dourado">Programação</a> |
-                    <a href="#noticias" class="dourado">Notícias</a> |
-                    <a href="#contato" class="dourado">Contato</a>
-                </div>
-                <div class="col-md-4">
-                    <h5 class="dourado">Siga-nos</h5>
-                    <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
-                    <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
-                    <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
-                </div>
+  <!-- Rodapé -->
+<footer class="footer text-white">
+    <div class="container py-5">
+        <div class="row">
+            <!-- Área de Cadastro -->
+            <div class="col-md-4">
+                <h5 class="dourado">Cadastre-se e participe de promoções</h5>
+                <form action="#" method="post">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Seu melhor email*</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefone" class="form-label">Seu telefone WhatsApp*</label>
+                        <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Cadastre-se</button>
+                    <p class="text-muted mt-2" style="font-size: 0.9rem;">Ao se cadastrar você concorda em receber nossos e-mails com novidades.</p>
+                </form>
             </div>
-            <p class="mt-3 text-center">© 2024 Rede Fidelidade. Todos os direitos reservados.</p>
+
+            <!-- Links Úteis -->
+            <div class="col-md-4">
+                <h5 class="dourado">Rede Fidelidade</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#promocoes" class="dourado">Promoções</a></li>
+                    <li><a href="#entretenimento" class="dourado">Entretenimento</a></li>
+                    <li><a href="#musica" class="dourado">Música</a></li>
+                    <li><a href="#programacao" class="dourado">Programação</a></li>
+                    <li><a href="#contato" class="dourado">Contato</a></li>
+                </ul>
+            </div>
+
+            <!-- Contato e Localização -->
+            <div class="col-md-4">
+                <h5 class="dourado">Contato</h5>
+                <p class="contact-info dourado">105.5 FM - Brasília</p>
+                <p class="contact-info">Atendimento ao Ouvinte: <span class="dourado">0800 342 1055</span></p>
+                <p class="contact-info">Departamento Comercial: <span class="dourado">0800 342 1055</span></p>
+                <p class="contact-info">Afilie-se: <span class="dourado">(61) 3214-1030</span></p>
+            </div>
         </div>
-    </footer>
+        <hr class="text-muted">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="dourado mb-0">© 2024 Rede Fidelidade - Todos os direitos reservados.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <p class="mb-0">Desenvolvido por <a href="#" class="dourado">Sua Agência</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
 
     <a href="https://wa.me/5511999999999" class="whatsapp-button">
         <i class="bi bi-whatsapp"></i>
