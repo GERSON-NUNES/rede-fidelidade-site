@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -30,7 +30,7 @@
         }
 
         .logo-container p {
-            font-size: 1.2rem; /* Frase menor */
+            font-size: 1.2rem;
             color: #d4af37; /* Dourado */
             margin: 0;
         }
@@ -98,28 +98,37 @@
             border-bottom: 2px solid #444;
         }
 
-        .ad-space {
-            background-color: #333;
-            padding: 15px;
-            text-align: center;
-            color: #d4af37;
-            border: 2px dashed #d4af37;
-            border-radius: 10px;
+        .daily-messages {
+            padding: 20px;
+            background-color: #222;
+            color: #d4af37; /* Dourado */
             margin-top: 20px;
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
     <!-- Cabeçalho -->
     <header class="bg-dark text-white py-4">
-        <div class="container d-flex align-items-center">
-            <div class="logo-container me-3">
-                <img src="logo.png" alt="Logo Rede Fidelidade" class="img-fluid">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <div class="logo-container me-3">
+                    <img src="logo.png" alt="Logo Rede Fidelidade" class="img-fluid">
+                </div>
+                <div>
+                    <h1>Rede Fidelidade</h1>
+                    <p>Conexão Além das Redes Sociais</p>
+                </div>
             </div>
-            <div>
-                <h1>Rede Fidelidade</h1>
-                <p>Conexão Além das Redes Sociais</p>
-            </div>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a href="#home" class="nav-link text-white">Home</a></li>
+                    <li class="nav-item"><a href="#programacao" class="nav-link text-white">Programação</a></li>
+                    <li class="nav-item"><a href="#noticias" class="nav-link text-white">Notícias</a></li>
+                    <li class="nav-item"><a href="#contato" class="nav-link text-white">Contato</a></li>
+                </ul>
+            </nav>
+            <a href="https://audio-live-stream-url" class="btn btn-radio ms-3">Ouça ao Vivo</a>
         </div>
     </header>
 
@@ -153,8 +162,6 @@
                 <iframe src="https://www.youtube.com/embed/esyniEFeUhA" allowfullscreen></iframe>
                 <iframe src="https://www.youtube.com/embed/9VT_jyYkM-g" allowfullscreen></iframe>
                 <iframe src="https://www.youtube.com/embed/914EvDv7x0A" allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/FMtFziNEcsw" allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/esyniEFeUhA" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -183,22 +190,24 @@
         </div>
     </section>
 
+    <!-- Mensagens do Dia -->
+    <section class="daily-messages">
+        <div class="container text-center">
+            <h3>Mensagem do Dia</h3>
+            <p>“Confie no Senhor de todo o coração e não se apoie em seu próprio entendimento.”</p>
+            <p class="text-muted">Atualizado automaticamente</p>
+        </div>
+    </section>
+
     <!-- Rodapé -->
     <footer class="footer text-white">
         <div class="container py-5">
             <div class="row">
-                <div class="col-md-4">
-                    <h5 class="dourado">Rede Fidelidade</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#promocoes" class="dourado">Promoções</a></li>
-                        <li><a href="#entretenimento" class="dourado">Entretenimento</a></li>
-                        <li><a href="#musica" class="dourado">Música</a></li>
-                    </ul>
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="dourado mb-0">© 2024 Rede Fidelidade - Todos os direitos reservados.</p>
                 </div>
-                <div class="col-md-4 text-center">
-                    <h5 class="dourado">Contato</h5>
-                    <p class="contact-info">Atendimento ao Ouvinte: 557799810-8891</p>
-                    <p class="contact-info">Departamento Comercial: 5577991420330</p>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Desenvolvido por <a href="#" class="dourado">G3 Produções</a></p>
                 </div>
             </div>
         </div>
