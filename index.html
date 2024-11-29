@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -198,7 +198,7 @@
 </head>
 <body>
 
-   <!-- INÍCIO DO CABEÇALHO -->
+<!-- INÍCIO DO CABEÇALHO -->
 <header class="bg-dark text-white py-4">
     <div class="container d-flex align-items-center justify-content-between">
         <div class="d-flex align-items-center">
@@ -217,7 +217,6 @@
                 <li class="nav-item"><a href="#noticias" class="nav-link text-white">Notícias</a></li>
                 <li class="nav-item"><a href="#contato" class="nav-link text-white">Contato</a></li>
                 <li class="nav-item"><a href="#rede" class="nav-link text-white">REDE</a></li>
-               
             </ul>
             <button class="btn" style="background-color: #d4af37; color: #000; font-weight: bold;" id="audioButton">
                 Ouça ao Vivo
@@ -250,168 +249,169 @@
         </div>
     </div>
     <a class="carousel-control-prev" href="#banner" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        
+       
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
     </a>
     <a class="carousel-control-next" href="#banner" role="button" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    </a>
+        <span class="visually-hidden">Next</span>
+    
+    </
+</a>
 </section>
 <!-- FIM DO BANNER ROTATIVO -->
-    
-    <!-- INÍCIO DA PROGRAMAÇÃO -->
+
+<!-- INÍCIO DA SEÇÃO DE VÍDEOS -->
 <section id="programacao" class="video-carousel-container">
-    <h3 class="text-center">Programação ao Vivo</h3>
-    <div class="video-carousel">
-        <iframe src="https://www.youtube.com/embed/FMtfziNEcsw" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/esyniEFeUhA" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/9VT_jyYkM-g" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/914EvDv7x0A" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+    <
+<div class="video-carousel">
+        <!-- Exemplo de vídeo do YouTube incorporado -->
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <button class="carousel-btn left" onclick="moveCarousel('left')">←</button>
-    <button class="carousel-btn right" onclick="moveCarousel('right')">→</button>
+    <button class="carousel-btn left" onclick="moveCarousel('left')">❮</button>
+    <button class="carousel-btn right" onclick="moveCarousel('right')">❯</button>
 </section>
-<!-- FIM DA PROGRAMAÇÃO -->
 
+<!-- INÍCIO DA SEÇÃO DE MENSAGENS -->
+<section class="daily-messages">
+    <h4>Mensagem do Dia:</h4>
+    <p id="message"></p>
+</section>
 
-<script>
-    const apiKey = 'SUA_CHAVE_DA_API'; // Substitua pela sua chave da API
-    const channelId = 'UC0nyJtP2b0XxLFbKRA9B9bA'; // ID do canal da Rede Fidelidade (alterar conforme necessário)
-    const maxResults = 6; // Número máximo de vídeos a serem exibidos
-
-    // Função para buscar vídeos do canal
-    async function fetchVideos() {
-        const url = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&order=date&maxResults=${maxResults}&part=snippet`;
+<!-- INÍCIO DO RODAPÉ -->
+<footer class="footer">
+    <div class="container">
         
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-            const videos = data.items;
+       
+<div class="row">
+            <div class="col-md-6">
+                <div class="contact-info">
+                    
+                   
+<p><strong>Contato:</strong></p>
+                    
+                    <
+<p>Email: contato@redefidelidade.com.br</p>
+                    <p>Telefone: +55 11 1234-5678</p>
+                
+                </
+</div>
+            </div>
+            <div class="col-md-6">
+                <div class="social-links">
+                    <a href="https://www.facebook.com/redefidelidade" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/redefidelidade" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com/redefidelidade" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/redefidelidade" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        
+        </
+</div>
+    </div>
 
-            // Adicionar vídeos ao carrossel
-            const videoContainer = document.getElementById('video-container');
-            videoContainer.innerHTML = ''; // Limpa a lista de vídeos existente
+</footer
+</footer>
+<!-- FIM DO RODAPÉ -->
 
-            videos.forEach(video => {
-                const videoId = video.id.videoId;
-                const iframe = document.createElement('iframe');
-                iframe.src = `https://www.youtube.com/embed/${videoId}`;
-                iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
-                iframe.allowFullscreen = true;
-                videoContainer.appendChild(iframe);
-            });
-        } catch (error) {
-            console.error('Erro ao buscar vídeos:', error);
+<!-- SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Áudio ao vivo
+    let audioPlaying = false;
+    let liveAudio = new Audio('path_to_audio.mp3');
+    document.getElementById("audio
+
+    // Áudio ao vivo
+    let audioPlaying = false;
+    let liveAudio = new Audio('path_to
+
+    // Áudio ao vivo
+    let audioPlaying = false;
+    let liveAudio = new Audio('path_to_audio.mp3');
+    document.getElementById("audioButton").addEventListener("click", function () {
+        if (audioPlaying) {
+            liveAudio.pause();
+            this.innerText = "Ouça ao Vivo";
+        } else {
+            liveAudio.play();
+            this.innerText = "Pausar Ao Vivo";
         }
+        audioPlaying = !audioPlaying;
+    });
+
+    // Carrossel de Vídeos
+    let currentIndex = 0;
+    const videos = document.querySelectorAll('.video-carousel
+
+    // Áudio ao vivo
+    let audioPlaying = false;
+    let liveAudio = new Audio('path_to_audio.mp3');
+    document.getElementById("audioButton").addEventListener("click", function () {
+        if (audioPlaying) {
+            liveAudio.pause();
+            this.innerText = "Ouça ao Vivo";
+        } else {
+            liveAudio.play();
+            this.innerText = "Pausar Ao Vivo";
+        }
+        audioPlaying = !audioPlaying;
+    });
+
+    // Carrossel de Vídeos
+    let currentIndex = 0;
+    const videos = document.querySelectorAll('.video-carousel iframe');
+
+    function moveCarousel(direction) {
+        if (direction === 'left') {
+            currentIndex = (currentIndex === 0) ? videos.length - 1 : currentIndex - 1;
+        } else {
+            currentIndex = (currentIndex === videos.length - 1) ? 0 : currentIndex + 1;
+        }
+        document.querySelector('.video-carousel
+
+    // Áudio ao vivo
+    let audioPlaying = false;
+    let liveAudio = new Audio('path_to_audio.mp3');
+    document.getElementById("audioButton").addEventListener("click", function () {
+        if (audioPlaying) {
+            liveAudio.pause();
+            this.innerText = "Ouça ao Vivo";
+        } else {
+            liveAudio.play();
+            this.innerText = "Pausar Ao Vivo";
+        }
+        audioPlaying = !audioPlaying;
+    });
+
+    // Carrossel de Vídeos
+    let currentIndex = 0;
+    const videos = document.querySelectorAll('.video-carousel iframe');
+
+    function moveCarousel(direction) {
+        if (direction === 'left') {
+            currentIndex = (currentIndex === 0) ? videos.length - 1 : currentIndex - 1;
+        } else {
+            currentIndex = (currentIndex === videos.length - 1) ? 0 : currentIndex + 1;
+        }
+        document.querySelector('.video-carousel').style.transform = `translateX(-${currentIndex * 320}px)`;
     }
 
-    // Carregar vídeos assim que a página carregar
-    window.onload = fetchVideos;
+    // Mensagens do dia
+    const messages = [
+        "Que a paz de Cristo seja contigo!",
+        "O Senhor é o meu pastor, nada me faltará.",
+        "A fé move montanhas!",
+        "Que a graça de Deus esteja sobre sua vida hoje.",
+        "Confie no Senhor de todo o coração.",
+    ];
+    document.getElementById("message").textContent = messages[Math.floor(Math.random() * messages.length)];
 </script>
-
- <!-- INÍCIO DAS NOTICIAS DO DIA -->
-<section id="noticias" class="noticias">
-    <div class="container">
-        <h2>Notícias e Atualizações</h2>
-        <div class="news-grid">
-            <div class="news-card">
-                <img src="noticia1.jpg" alt="Notícia 1">
-                <h3>Evento Especial: Conexão da Fé</h3>
-                <p>Confira os destaques do evento mais aguardado do ano, trazendo mensagens de esperança e fé.</p>
-                <a href="#" class="btn btn-secondary">Leia Mais</a>
-            </div>
-            <div class="news-card">
-                <img src="noticia2.jpg" alt="Notícia 2">
-                <h3>Rede Fidelidade Expande Audiência</h3>
-                <p>Conheça os novos programas e horários que prometem impactar vidas.</p>
-                <a href="#" class="btn btn-secondary">Leia Mais</a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- FIM DAS NOTICIAS DO DI -->
-
-    
-    <!-- INÍCIO DAS MENSAGENS DO DIA -->
-    <section class="daily-messages">
-        <div class="container text-center">
-            <h3>Mensagem do Dia</h3>
-            <p>“Confie no Senhor de todo o coração e não se apoie em seu próprio entendimento.”</p>
-            <p class="text-muted">Provérbios 3:5</p>
-        </div>
-    </section>
-    <!-- FIM DAS MENSAGENS DO DIA -->
-
-    <!-- INÍCIO DO CONTATO E CADASTRO -->
-    <section class="contact-section">
-        <div class="container text-center">
-            <h5>Cadastre-se e participe de promoções</h5>
-            <form id="signupForm">
-                <input type="email" class="form-control" id="email" placeholder="Seu melhor email*" required>
-                <input type="tel" class="form-control" id="phone" placeholder="Seu telefone WhatsApp*" required>
-                <button type="submit" class="btn w-100">Cadastre-se</button>
-            </form>
-        </div>
-    </section>
-    <!-- FIM DO CONTATO E CADASTRO -->
-
-      <!-- INÍCIO DO RODAPÉ -->
-    <footer class="footer text-center">
-        <div class="container">
-            <div class="contact-info">
-                <p>Contato: contato@rededefidelidade.com.br</p>
-            </div>
-            <div class="social-links">
-                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-            <p>© 2024 Rede Fidelidade - Todos os direitos reservados</p>
-        </div>
-    </footer>
-    <!-- FIM DO RODAPÉ -->
-
-    <script>
-        // Função de áudio ao vivo
-        var audioPlaying = false;
-        document.getElementById("audioButton").addEventListener("click", function () {
-            if (audioPlaying) {
-                // Pause audio
-                document.getElementById("liveAudio").pause();
-                this.innerText = "Ouça ao Vivo";
-            } else {
-                // Play audio
-                var audio = new Audio('path_to_audio.mp3'); 
-                audio.id = 'liveAudio';
-                audio.play();
-                this.innerText = "Pausar Ao Vivo";
-            }
-            audioPlaying = !audioPlaying;
-        });
-
-        // Função para mover os vídeos para a esquerda e direita
-        function moveCarousel(direction) {
-            var carousel = document.querySelector('.video-carousel');
-            if (direction === 'left') {
-                carousel.style.transform = 'translateX(0)';
-            } else {
-                carousel.style.transform = 'translateX(-100%)';
-            }
-        }
-
-        // Validação do formulário de cadastro
-        document.getElementById("signupForm").addEventListener("submit", function(event) {
-            var email = document.getElementById("email").value;
-            var phone = document.getElementById("phone").value;
-            
-            if (!email || !phone) {
-                alert("Por favor, preencha todos os campos obrigatórios.");
-                event.preventDefault();
-            }
-        });
-    </script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
 </body>
 </html>
 
