@@ -19,26 +19,26 @@
         .logo-container img {
             border-radius: 50%; /* Logo redonda */
             border: 2px solid #fff; /* Borda branca */
-            max-height: 120px; /* Tamanho ajustado */
+            max-height: 120px;
             width: auto;
         }
 
         .logo-container h1 {
-            font-size: 2.5rem; /* Aumenta o tamanho do nome */
+            font-size: 3rem; /* Tamanho do nome da Rede */
             margin: 0;
             color: #fff;
         }
 
         .logo-container p {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             color: #d4af37; /* Dourado */
             margin: 0;
         }
 
         .carousel-inner img {
             width: 100%;
-            height: 400px; /* Altura padrão para os banners */
-            object-fit: cover; /* Evita distorção */
+            height: 400px; /* Altura para os banners */
+            object-fit: cover;
         }
 
         .btn-radio {
@@ -71,7 +71,7 @@
         .footer .contact-info {
             font-size: 0.9rem;
             margin-bottom: 10px;
-            color: #d4af37; /* Dourado para os textos */
+            color: #d4af37;
         }
 
         .footer .social-links img {
@@ -81,6 +81,7 @@
 
         .video-carousel-container {
             position: relative;
+            margin-top: 30px;
         }
 
         .video-carousel {
@@ -90,7 +91,7 @@
         }
 
         .video-carousel iframe {
-            width: 300px; /* Largura dos vídeos */
+            width: 300px;
             height: 200px;
             border: none;
         }
@@ -118,7 +119,7 @@
         .daily-messages {
             padding: 20px;
             background-color: #222;
-            color: #d4af37; /* Dourado */
+            color: #d4af37;
             margin-top: 20px;
             border-radius: 10px;
         }
@@ -211,6 +212,23 @@
         </div>
     </section>
 
+    <!-- Programação -->
+    <section id="programacao" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Programação</h2>
+            <div class="video-carousel-container">
+                <button class="carousel-btn left" onclick="scrollLeft()">&#9664;</button>
+                <div class="video-carousel">
+                    <iframe src="https://www.youtube.com/embed/FMtFziNEcsw" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/esyniEFeUhA" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/9VT_jyYkM-g" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/914EvDv7x0A" allowfullscreen></iframe>
+                </div>
+                <button class="carousel-btn right" onclick="scrollRight()">&#9654;</button>
+            </div>
+        </div>
+    </section>
+
     <!-- Rodapé -->
     <footer class="footer text-white">
         <div class="container py-5">
@@ -251,13 +269,10 @@
             const carousel = document.querySelector('.video-carousel');
             carousel.scrollBy({ left: 320, behavior: 'smooth' });
         }
-
-        iframes.forEach(iframe => {
-            iframe.addEventListener('mouseenter', () => stopAllVideos());
-        });
     </script>
 </body>
 </html>
+
 
 
 
