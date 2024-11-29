@@ -147,7 +147,7 @@
     </style>
 </head>
 <body>
-  <!-- INÍCIO DO CABEÇALHO -->
+ <!-- INÍCIO DO CABEÇALHO -->
 <header class="bg-dark text-white py-4">
     <div class="container d-flex align-items-center justify-content-between">
         <!-- Logotipo e Nome -->
@@ -172,10 +172,24 @@
                 <li class="nav-item"><a href="#noticias" class="nav-link text-white">Notícias</a></li>
                 <li class="nav-item"><a href="#contato" class="nav-link text-white">Contato</a></li>
             </ul>
+            <!-- Botão "Ouça ao Vivo" -->
+            <button class="btn" style="background-color: #d4af37; color: #000; font-weight: bold;" id="audioButton">
+                Ouça ao Vivo
+            </button>
         </nav>
     </div>
 </header>
 <!-- FIM DO CABEÇALHO -->
+
+<script>
+    // Função para reproduzir áudio ao vivo
+    document.getElementById('audioButton').addEventListener('click', function() {
+        // Substitua este link pelo link do áudio ao vivo no YouTube ou outro serviço de streaming
+        window.open("https://www.youtube.com/watch?v=FMtFziNEcsw", "_blank");
+        alert('Reproduzindo áudio ao vivo...');
+    });
+</script>
+
 
 
     <!-- INÍCIO DO BANNER ROTATIVO -->
