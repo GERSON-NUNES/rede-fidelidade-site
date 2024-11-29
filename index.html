@@ -18,22 +18,21 @@
 
         .logo-container img {
             border-radius: 50%; /* Logo redonda */
-            border: 2px solid #fff; /* Borda branca */
-            max-height: 120px;
+            border: 3px solid #fff; /* Borda branca */
+            max-height: 150px;
             width: auto;
         }
 
         .logo-container h1 {
-            font-size: 3rem; /* Tamanho do nome da Rede */
+            font-size: 3.5rem; /* Tamanho maior do nome da Rede */
             margin: 0;
             color: #fff;
         }
 
         .logo-container p {
-            font-size: 1.5rem;
-            color: #d4af37; /* Dourado */
+            font-size: 1.8rem;
+            color: #d4af37; /* Cor dourada */
             margin: 0;
-       
         }
 
         .carousel-inner img {
@@ -78,6 +77,39 @@
         .footer .social-links img {
             width: 30px;
             margin: 0 10px;
+        }
+
+        /* Estilo para as logos de redes sociais */
+        .social-logos {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 200px;
+            overflow: hidden;
+        }
+
+        .social-logo {
+            width: 30px;
+            height: 30px;
+            margin: 0 5px;
+            opacity: 0.5;
+        }
+
+        .social-logo:hover {
+            opacity: 1;
+        }
+
+        /* Estilo para alternar as logos */
+        @keyframes logoCycle {
+            0% { transform: translateX(0); }
+            33% { transform: translateX(-100%); }
+            66% { transform: translateX(-200%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Animação para o ciclo das logos */
+        #social-logos {
+            animation: logoCycle 60s infinite;
         }
 
         .video-carousel-container {
@@ -144,129 +176,39 @@
             background-color: #d9534f;
             color: #fff;
         }
-        /* FIM DO ESTILO PERSONALIZADO */
+
+        /* Fim do estilo personalizado */
     </style>
 </head>
 <body>
-<!-- INÍCIO DO CABEÇALHO -->
-<header class="bg-dark text-white py-4">
-    <div class="container d-flex align-items-center justify-content-between">
-        <!-- Logotipo e Nome -->
-        <div class="d-flex align-items-center">
-            <div class="logo-container me-3">
-                <img src="logo.png" alt="Logo Rede Fidelidade" class="img-fluid">
+
+    <!-- INÍCIO DO CABEÇALHO -->
+    <header class="bg-dark text-white py-4">
+        <div class="container d-flex align-items-center justify-content-between">
+            <!-- Logotipo e Nome -->
+            <div class="d-flex align-items-center">
+                <!-- Logotipo -->
+                <div class="logo-container me-3">
+                    <img src="logo.png" alt="Logo Rede Fidelidade" class="img-fluid" style="border-radius: 50%; border: 3px solid #fff; max-height: 150px; width: auto;">
+                </div>
+                <!-- Nome e Frase -->
+                <div>
+                    <h1 style="font-size: 3.5rem; font-weight: bold; margin: 0; color: #fff;">Rede Fidelidade</h1>
+                    <p style="font-size: 1.8rem; color: #d4af37; margin: 0;">Conexão Além das Redes Sociais</p>
+                </div>
             </div>
-            <div>
-                <h1>Rede Fidelidade</h1>
-                <p>Conexão Além das Redes Sociais</p>
-            </div>
+            <!-- Menu -->
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a href="#home" class="nav-link text-white">Home</a></li>
+                    <li class="nav-item"><a href="#programacao" class="nav-link text-white">Programação</a></li>
+                    <li class="nav-item"><a href="#noticias" class="nav-link text-white">Notícias</a></li>
+                    <li class="nav-item"><a href="#contato" class="nav-link text-white">Contato</a></li>
+                </ul>
+            </nav>
         </div>
-        <!-- Menu -->
-        <nav>
-            <ul class="nav">
-                <li class="nav-item"><a href="#home" class="nav-link text-white">Home</a></li>
-                <li class="nav-item"><a href="#programacao" class="nav-link text-white">Programação</a></li>
-                <li class="nav-item"><a href="#noticias" class="nav-link text-white">Notícias</a></li>
-                <li class="nav-item"><a href="#contato" class="nav-link text-white">Contato</a></li>
-            </ul>
-            <!-- Botão "Ouça ao Vivo" -->
-            <button class="btn" style="background-color: #d4af37; color: #000; font-weight: bold;" id="audioButton">
-                Ouça ao Vivo
-            </button>
-            <!-- Logos das Redes Sociais -->
-            <div class="social-logos ms-3" id="social-logos">
-                <img src="facebook-icon.png" alt="Facebook" class="social-logo">
-                <img src="instagram-icon.png" alt="Instagram" class="social-logo">
-                <img src="youtube-icon.png" alt="YouTube" class="social-logo">
-                <img src="twitter-icon.png" alt="Twitter" class="social-logo">
-                <img src="linkedin-icon.png" alt="LinkedIn" class="social-logo">
-                <img src="whatsapp-icon.png" alt="WhatsApp" class="social-logo">
-                <img src="tiktok-icon.png" alt="TikTok" class="social-logo">
-                <img src="pinterest-icon.png" alt="Pinterest" class="social-logo">
-                <img src="snapchat-icon.png" alt="Snapchat" class="social-logo">
-                <img src="tumblr-icon.png" alt="Tumblr" class="social-logo">
-                <img src="vimeo-icon.png" alt="Vimeo" class="social-logo">
-            </div>
-        </nav>
-    </div>
-</header>
-<!-- FIM DO CABEÇALHO -->
-
-<script>
-    // Variáveis de controle
-    let audioPlaying = false;
-    let player; // Player do áudio ao vivo
-    let activeVideo; // Vídeo ativo (se houver)
-
-    // Função para inicializar o player de áudio
-    function initializeAudioPlayer() {
-        // Cria um iframe com a URL do áudio ao vivo (URL do áudio em streaming)
-        const liveAudioUrl = "https://www.youtube.com/embed/FMtFziNEcsw?autoplay=1"; // Altere com o link correto
-        player = document.createElement('iframe');
-        player.setAttribute('src', liveAudioUrl);
-        player.setAttribute('frameborder', '0');
-        player.setAttribute('allow', 'autoplay');
-        player.setAttribute('style', 'display:none;');
-        document.body.appendChild(player);
-    }
-
-    // Função para alternar entre o áudio ao vivo e o vídeo
-    function toggleLiveAudio() {
-        if (audioPlaying) {
-            // Se o áudio ao vivo já estiver tocando, pare-o
-            stopLiveAudio();
-        } else {
-            // Se o áudio não estiver tocando, inicie a transmissão ao vivo
-            startLiveAudio();
-        }
-    }
-
-    // Função para iniciar o áudio ao vivo
-    function startLiveAudio() {
-        audioPlaying = true;
-        stopAllVideos();  // Pausa qualquer vídeo em reprodução
-        player.style.display = 'block'; // Exibe o player de áudio
-        alert('Reproduzindo áudio ao vivo!');
-    }
-
-    // Função para parar o áudio ao vivo
-    function stopLiveAudio() {
-        audioPlaying = false;
-        player.style.display = 'none'; // Esconde o player de áudio
-        alert('Áudio ao vivo pausado!');
-    }
-
-    // Função para parar todos os vídeos ao mesmo tempo
-    function stopAllVideos() {
-        const iframes = document.querySelectorAll('iframe');
-        iframes.forEach(iframe => {
-            const player = iframe.contentWindow;
-            if (player.postMessage) {
-                player.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-            }
-        });
-    }
-
-    // Função para pausar o áudio ao vivo quando um vídeo for reproduzido
-    function handleVideoPlay() {
-        if (audioPlaying) {
-            stopLiveAudio();
-        }
-    }
-
-    // Eventos de clique para o botão "Ouça ao Vivo"
-    document.getElementById('audioButton').addEventListener('click', toggleLiveAudio);
-
-    // Adiciona eventos aos iframes dos vídeos para pausar o áudio ao vivo
-    document.querySelectorAll('iframe').forEach(iframe => {
-        iframe.addEventListener('play', handleVideoPlay);
-    });
-
-    // Inicializa o player de áudio
-    initializeAudioPlayer();
-</script>
-
-
+    </header>
+    <!-- FIM DO CABEÇALHO -->
 
     <!-- INÍCIO DO BANNER ROTATIVO -->
     <section id="banner" class="carousel slide" data-bs-ride="carousel">
@@ -375,6 +317,7 @@
     </script>
 </body>
 </html>
+
 
 
 
