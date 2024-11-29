@@ -295,64 +295,121 @@
     </section>
     <!-- FIM DA PROGRAMAÇÃO -->
 
-    <!-- INÍCIO DO RODAPÉ -->
-    <footer class="footer text-center">
-        <div class="container">
-            <div class="contact-info">
-                <p>Contato: contato@rededefidelidade.com.br</p>
+   <!-- INÍCIO DO RODAPÉ -->
+    <footer class="footer text-white">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="dourado mb-0">© 2024 Rede Fidelidade - Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Desenvolvido por <a href="#" class="dourado">G3 Produções</a></p>
+                </div>
             </div>
-            <div class="social-links">
-                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-            <p>© 2024 Rede Fidelidade - Todos os direitos reservados</p>
         </div>
     </footer>
     <!-- FIM DO RODAPÉ -->
 
     <script>
-        // Função de áudio ao vivo
-        var audioPlaying = false;
-        document.getElementById("audioButton").addEventListener("click", function () {
-            if (audioPlaying) {
-                // Pause audio
-                document.getElementById("liveAudio").pause();
-                this.innerText = "Ouça ao Vivo";
-            } else {
-                // Play audio
-                var audio = new Audio('path_to_audio.mp3'); 
-                audio.id = 'liveAudio';
-                audio.play();
-                this.innerText = "Pausar Ao Vivo";
-            }
+        const iframes = document.querySelectorAll('.video-carousel iframe');
+        const audioButton = document.getElementById('audioButton');
+        let audioPlaying = false;
+
+        audioButton.addEventListener('click', () => {
             audioPlaying = !audioPlaying;
+            stopAllVideos();
+            alert(audioPlaying ? 'Reproduzindo áudio ao vivo...' : 'Áudio ao vivo pausado.');
         });
 
-        // Função para mover os vídeos para a esquerda e direita
-        function moveCarousel(direction) {
-            var carousel = document.querySelector('.video-carousel');
-            if (direction === 'left') {
-                carousel.style.transform = 'translateX(0)';
-            } else {
-                carousel.style.transform = 'translateX(-100%)';
-            }
+        function stopAllVideos() {
+            iframes.forEach(iframe => {
+                iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+            });
         }
 
-        // Validação do formulário de cadastro
-        document.getElementById("signupForm").addEventListener("submit", function(event) {
-            var email = document.getElementById("email").value;
-            var phone = document.getElementById("phone").value;
-            
-            if (!email || !phone) {
-                alert("Por favor, preencha todos os campos obrigatórios.");
-                event.preventDefault();
+        function scrollLeft() {
+            const carousel = document.querySelector('.video-carousel');
+            carousel.scrollBy({ left: -320, behavior: 'smooth' });
+        }
+
+        function scrollRight() {
+            const carousel = document.querySelector('.video-carousel');
+            carousel.scrollBy({ left: 320, behavior: 'smooth' });
+        }
+    </script><script>
+    // Variáveis de controle
+    let audioPlaying = false;
+    let player; // Player do áudio ao vivo
+    let activeVideo; // Vídeo ativo (se houver)
+
+    // Função para inicializar o player de áudio
+    function initializeAudioPlayer() {
+        // Cria um iframe com a URL do áudio ao vivo (URL do áudio em streaming)
+        const liveAudioUrl = "https://www.youtube.com/embed/FMtFziNEcsw?autoplay=1"; // Altere com o link correto
+        player = document.createElement('iframe');
+        player.setAttribute('src', liveAudioUrl);
+        player.setAttribute('frameborder', '0');
+        player.setAttribute('allow', 'autoplay');
+        player.setAttribute('style', 'display:none;');
+        document.body.appendChild(player);
+    }
+
+    // Função para alternar entre o áudio ao vivo e o vídeo
+    function toggleLiveAudio() {
+        if (audioPlaying) {
+            // Se o áudio ao vivo já estiver tocando, pare-o
+            stopLiveAudio();
+        } else {
+            // Se o áudio não estiver tocando, inicie a transmissão ao vivo
+            startLiveAudio();
+        }
+    }
+
+    // Função para iniciar o áudio ao vivo
+    function startLiveAudio() {
+        audioPlaying = true;
+        stopAllVideos();  // Pausa qualquer vídeo em reprodução
+        player.style.display = 'block'; // Exibe o player de áudio
+        alert('Reproduzindo áudio ao vivo!');
+    }
+
+    // Função para parar o áudio ao vivo
+    function stopLiveAudio() {
+        audioPlaying = false;
+        player.style.display = 'none'; // Esconde o player de áudio
+        alert('Áudio ao vivo pausado!');
+    }
+
+    // Função para parar todos os vídeos ao mesmo tempo
+    function stopAllVideos() {
+        const iframes = document.querySelectorAll('iframe');
+        iframes.forEach(iframe => {
+            const player = iframe.contentWindow;
+            if (player.postMessage) {
+                player.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
             }
         });
-    </script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+    }
+
+    // Função para pausar o áudio ao vivo quando um vídeo for reproduzido
+    function handleVideoPlay() {
+        if (audioPlaying) {
+            stopLiveAudio();
+        }
+    }
+
+    // Eventos de clique para o botão "Ouça ao Vivo"
+    document.getElementById('audioButton').addEventListener('click', toggleLiveAudio);
+
+    // Adiciona eventos aos iframes dos vídeos para pausar o áudio ao vivo
+    document.querySelectorAll('iframe').forEach(iframe => {
+        iframe.addEventListener('play', handleVideoPlay);
+    });
+
+    // Inicializa o player de áudio
+    initializeAudioPlayer();
+</script>
+
 </body>
 </html>
 
