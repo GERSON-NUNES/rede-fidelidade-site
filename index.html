@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rede Fidelidade</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* INÍCIO DO ESTILO PERSONALIZADO */
         body {
@@ -79,7 +80,6 @@
             margin: 0 10px;
         }
 
-        /* Estilo para as logos de redes sociais */
         .social-logos {
             display: flex;
             align-items: center;
@@ -107,7 +107,6 @@
             100% { transform: translateX(0); }
         }
 
-        /* Animação para o ciclo das logos */
         #social-logos {
             animation: logoCycle 60s infinite;
         }
@@ -121,6 +120,7 @@
             display: flex;
             gap: 15px;
             overflow: hidden;
+            transition: transform 0.5s ease;
         }
 
         .video-carousel iframe {
@@ -176,6 +176,22 @@
             background-color: #d9534f;
             color: #fff;
         }
+        
+        .social-links {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            color: #d4af37;
+            font-size: 2rem;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #fff;
+        }
 
         /* Fim do estilo personalizado */
     </style>
@@ -208,7 +224,6 @@
     </div>
 </header>
 <!-- FIM DO CABEÇALHO -->
-
 
     <!-- INÍCIO DO BANNER ROTATIVO -->
     <section id="banner" class="carousel slide" data-bs-ride="carousel">
@@ -246,9 +261,9 @@
     <section class="contact-section">
         <div class="container text-center">
             <h5>Cadastre-se e participe de promoções</h5>
-            <form>
-                <input type="email" class="form-control" placeholder="Seu melhor email*" required>
-                <input type="tel" class="form-control" placeholder="Seu telefone WhatsApp*" required>
+            <form id="signupForm">
+                <input type="email" class="form-control" id="email" placeholder="Seu melhor email*" required>
+                <input type="tel" class="form-control" id="phone" placeholder="Seu telefone WhatsApp*" required>
                 <button type="submit" class="btn w-100">Cadastre-se</button>
             </form>
         </div>
@@ -256,140 +271,79 @@
     <!-- FIM DO CONTATO E CADASTRO -->
 
     <!-- INÍCIO DA PROGRAMAÇÃO -->
-    <section id="programacao" class="py-5">
-        <div class="container">
-            <h2 class="text-center">Programação</h2>
-            <div class="video-carousel-container">
-                <button class="carousel-btn left" onclick="scrollLeft()">&#9664;</button>
-                <div class="video-carousel">
-                    <iframe src="https://www.youtube.com/embed/FMtFziNEcsw" allowfullscreen></iframe>
-                    <iframe src="https://www.youtube.com/embed/esyniEFeUhA" allowfullscreen></iframe>
-                    <iframe src="https://www.youtube.com/embed/9VT_jyYkM-g" allowfullscreen></iframe>
-                    <iframe src="https://www.youtube.com/embed/914EvDv7x0A" allowfullscreen></iframe>
-                </div>
-                <button class="carousel-btn right" onclick="scrollRight()">&#9654;</button>
-            </div>
+    <section id="programacao" class="video-carousel-container">
+        <h3 class="text-center">Programação ao Vivo</h3>
+        <div class="video-carousel">
+            <iframe src="https://www.youtube.com/embed/video1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/video2" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/video3" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
+        <button class="carousel-btn left" onclick="moveCarousel('left')">←</button>
+        <button class="carousel-btn right" onclick="moveCarousel('right')">→</button>
     </section>
     <!-- FIM DA PROGRAMAÇÃO -->
 
     <!-- INÍCIO DO RODAPÉ -->
-    <footer class="footer text-white">
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="dourado mb-0">© 2024 Rede Fidelidade - Todos os direitos reservados.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <p class="mb-0">Desenvolvido por <a href="#" class="dourado">G3 Produções</a></p>
-                </div>
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="contact-info">
+                <p>Contato: contato@rededefidelidade.com.br</p>
             </div>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>© 2024 Rede Fidelidade - Todos os direitos reservados</p>
         </div>
     </footer>
     <!-- FIM DO RODAPÉ -->
 
     <script>
-        const iframes = document.querySelectorAll('.video-carousel iframe');
-        const audioButton = document.getElementById('audioButton');
-        let audioPlaying = false;
-
-        audioButton.addEventListener('click', () => {
+        // Função de áudio ao vivo
+        var audioPlaying = false;
+        document.getElementById("audioButton").addEventListener("click", function () {
+            if (audioPlaying) {
+                // Pause audio
+                document.getElementById("liveAudio").pause();
+                this.innerText = "Ouça ao Vivo";
+            } else {
+                // Play audio
+                var audio = new Audio('path_to_audio.mp3'); 
+                audio.id = 'liveAudio';
+                audio.play();
+                this.innerText = "Pausar Ao Vivo";
+            }
             audioPlaying = !audioPlaying;
-            stopAllVideos();
-            alert(audioPlaying ? 'Reproduzindo áudio ao vivo...' : 'Áudio ao vivo pausado.');
         });
 
-        function stopAllVideos() {
-            iframes.forEach(iframe => {
-                iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-            });
+        // Função para mover os vídeos para a esquerda e direita
+        function moveCarousel(direction) {
+            var carousel = document.querySelector('.video-carousel');
+            if (direction === 'left') {
+                carousel.style.transform = 'translateX(0)';
+            } else {
+                carousel.style.transform = 'translateX(-100%)';
+            }
         }
 
-        function scrollLeft() {
-            const carousel = document.querySelector('.video-carousel');
-            carousel.scrollBy({ left: -320, behavior: 'smooth' });
-        }
-
-        function scrollRight() {
-            const carousel = document.querySelector('.video-carousel');
-            carousel.scrollBy({ left: 320, behavior: 'smooth' });
-        }
-    </script><script>
-    // Variáveis de controle
-    let audioPlaying = false;
-    let player; // Player do áudio ao vivo
-    let activeVideo; // Vídeo ativo (se houver)
-
-    // Função para inicializar o player de áudio
-    function initializeAudioPlayer() {
-        // Cria um iframe com a URL do áudio ao vivo (URL do áudio em streaming)
-        const liveAudioUrl = "https://www.youtube.com/embed/FMtFziNEcsw?autoplay=1"; // Altere com o link correto
-        player = document.createElement('iframe');
-        player.setAttribute('src', liveAudioUrl);
-        player.setAttribute('frameborder', '0');
-        player.setAttribute('allow', 'autoplay');
-        player.setAttribute('style', 'display:none;');
-        document.body.appendChild(player);
-    }
-
-    // Função para alternar entre o áudio ao vivo e o vídeo
-    function toggleLiveAudio() {
-        if (audioPlaying) {
-            // Se o áudio ao vivo já estiver tocando, pare-o
-            stopLiveAudio();
-        } else {
-            // Se o áudio não estiver tocando, inicie a transmissão ao vivo
-            startLiveAudio();
-        }
-    }
-
-    // Função para iniciar o áudio ao vivo
-    function startLiveAudio() {
-        audioPlaying = true;
-        stopAllVideos();  // Pausa qualquer vídeo em reprodução
-        player.style.display = 'block'; // Exibe o player de áudio
-        alert('Reproduzindo áudio ao vivo!');
-    }
-
-    // Função para parar o áudio ao vivo
-    function stopLiveAudio() {
-        audioPlaying = false;
-        player.style.display = 'none'; // Esconde o player de áudio
-        alert('Áudio ao vivo pausado!');
-    }
-
-    // Função para parar todos os vídeos ao mesmo tempo
-    function stopAllVideos() {
-        const iframes = document.querySelectorAll('iframe');
-        iframes.forEach(iframe => {
-            const player = iframe.contentWindow;
-            if (player.postMessage) {
-                player.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+        // Validação do formulário de cadastro
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            
+            if (!email || !phone) {
+                alert("Por favor, preencha todos os campos obrigatórios.");
+                event.preventDefault();
             }
         });
-    }
-
-    // Função para pausar o áudio ao vivo quando um vídeo for reproduzido
-    function handleVideoPlay() {
-        if (audioPlaying) {
-            stopLiveAudio();
-        }
-    }
-
-    // Eventos de clique para o botão "Ouça ao Vivo"
-    document.getElementById('audioButton').addEventListener('click', toggleLiveAudio);
-
-    // Adiciona eventos aos iframes dos vídeos para pausar o áudio ao vivo
-    document.querySelectorAll('iframe').forEach(iframe => {
-        iframe.addEventListener('play', handleVideoPlay);
-    });
-
-    // Inicializa o player de áudio
-    initializeAudioPlayer();
-</script>
-
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
 </body>
 </html>
+
 
 
 
