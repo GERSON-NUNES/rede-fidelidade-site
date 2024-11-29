@@ -282,19 +282,52 @@
     </section>
     <!-- FIM DO CONTATO E CADASTRO -->
 
-    !-- INÍCIO DA PROGRAMAÇÃO -->
-    <section id="programacao" class="video-carousel-container">
-        <h3 class="text-center">Programação ao Vivo</h3>
-        <div class="video-carousel">
-            <iframe src="https://www.youtube.com/embed/video1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/video2" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/video3" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/video4" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <button class="carousel-btn left" onclick="moveCarousel('left')">←</button>
-        <button class="carousel-btn right" onclick="moveCarousel('right')">→</button>
-    </section>
-    <!-- FIM DA PROGRAMAÇÃO -->
+    <!-- INÍCIO DA PROGRAMAÇÃO -->
+<section id="programacao" class="video-carousel-container">
+    <h3 class="text-center">Programação ao Vivo</h3>
+    <div id="video-container" class="video-carousel">
+        <!-- Vídeos serão carregados aqui automaticamente -->
+    </div>
+    <button class="carousel-btn left" onclick="moveCarousel('left')">←</button>
+    <button class="carousel-btn right" onclick="moveCarousel('right')">→</button>
+</section>
+<!-- FIM DA PROGRAMAÇÃO -->
+
+<script>
+    const apiKey = 'SUA_CHAVE_DA_API'; // Substitua pela sua chave da API
+    const channelId = 'UC0nyJtP2b0XxLFbKRA9B9bA'; // ID do canal da Rede Fidelidade (alterar conforme necessário)
+    const maxResults = 6; // Número máximo de vídeos a serem exibidos
+
+    // Função para buscar vídeos do canal
+    async function fetchVideos() {
+        const url = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&order=date&maxResults=${maxResults}&part=snippet`;
+        
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            const videos = data.items;
+
+            // Adicionar vídeos ao carrossel
+            const videoContainer = document.getElementById('video-container');
+            videoContainer.innerHTML = ''; // Limpa a lista de vídeos existente
+
+            videos.forEach(video => {
+                const videoId = video.id.videoId;
+                const iframe = document.createElement('iframe');
+                iframe.src = `https://www.youtube.com/embed/${videoId}`;
+                iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+                iframe.allowFullscreen = true;
+                videoContainer.appendChild(iframe);
+            });
+        } catch (error) {
+            console.error('Erro ao buscar vídeos:', error);
+        }
+    }
+
+    // Carregar vídeos assim que a página carregar
+    window.onload = fetchVideos;
+</script>
+
 
     <!-- INÍCIO DO RODAPÉ -->
     <footer class="footer text-center">
