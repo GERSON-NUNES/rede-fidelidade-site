@@ -122,6 +122,26 @@
             margin-top: 20px;
             border-radius: 10px;
         }
+
+        .contact-section {
+            padding: 30px;
+            background-color: #111;
+            color: #d4af37;
+            border-top: 2px solid #444;
+        }
+
+        .contact-section h5 {
+            color: #fff;
+        }
+
+        .contact-section input {
+            margin-bottom: 10px;
+        }
+
+        .contact-section .btn {
+            background-color: #d9534f;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -170,50 +190,24 @@
         </a>
     </section>
 
-    <!-- Carrossel de Vídeos -->
-    <section class="video-section">
-        <div class="container">
-            <h2 class="text-center">Vídeos Recentes</h2>
-            <div class="video-carousel-container">
-                <button class="carousel-btn left" onclick="scrollLeft()">&#9664;</button>
-                <div class="video-carousel">
-                    <iframe src="https://www.youtube.com/embed/FMtFziNEcsw" allow="autoplay"></iframe>
-                    <iframe src="https://www.youtube.com/embed/esyniEFeUhA" allow="autoplay"></iframe>
-                    <iframe src="https://www.youtube.com/embed/9VT_jyYkM-g" allow="autoplay"></iframe>
-                    <iframe src="https://www.youtube.com/embed/914EvDv7x0A" allow="autoplay"></iframe>
-                </div>
-                <button class="carousel-btn right" onclick="scrollRight()">&#9654;</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Programação -->
-    <section id="programacao" class="py-5">
-        <div class="container">
-            <h2 class="text-center">Programação</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>Voz da Cidade</h4>
-                    <p>Segunda a Sexta - 10h</p>
-                </div>
-                <div class="col-md-4">
-                    <h4>Musical Gospel</h4>
-                    <p>Segunda a Sexta - 14h</p>
-                </div>
-                <div class="col-md-4">
-                    <h4>Fidelidade com Deus</h4>
-                    <p>Segunda a Sexta - 07h</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Mensagens do Dia -->
     <section class="daily-messages">
         <div class="container text-center">
             <h3>Mensagem do Dia</h3>
             <p>“Confie no Senhor de todo o coração e não se apoie em seu próprio entendimento.”</p>
             <p class="text-muted">Provérbios 3:5</p>
+        </div>
+    </section>
+
+    <!-- Contatos e Cadastro -->
+    <section class="contact-section">
+        <div class="container text-center">
+            <h5>Cadastre-se e participe de promoções</h5>
+            <form>
+                <input type="email" class="form-control" placeholder="Seu melhor email*" required>
+                <input type="tel" class="form-control" placeholder="Seu telefone WhatsApp*" required>
+                <button type="submit" class="btn w-100">Cadastre-se</button>
+            </form>
         </div>
     </section>
 
@@ -232,17 +226,21 @@
     </footer>
 
     <script>
-        let audioPlaying = false;
+        const iframes = document.querySelectorAll('.video-carousel iframe');
         const audioButton = document.getElementById('audioButton');
-        const iframes = document.querySelectorAll('iframe');
+        let audioPlaying = false;
 
         audioButton.addEventListener('click', () => {
             audioPlaying = !audioPlaying;
-            iframes.forEach(iframe => {
-                iframe.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
-            });
+            stopAllVideos();
             alert(audioPlaying ? 'Reproduzindo áudio ao vivo...' : 'Áudio ao vivo pausado.');
         });
+
+        function stopAllVideos() {
+            iframes.forEach(iframe => {
+                iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+            });
+        }
 
         function scrollLeft() {
             const carousel = document.querySelector('.video-carousel');
@@ -253,9 +251,14 @@
             const carousel = document.querySelector('.video-carousel');
             carousel.scrollBy({ left: 320, behavior: 'smooth' });
         }
+
+        iframes.forEach(iframe => {
+            iframe.addEventListener('mouseenter', () => stopAllVideos());
+        });
     </script>
 </body>
 </html>
+
 
 
 
