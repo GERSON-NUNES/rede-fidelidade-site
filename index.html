@@ -1,4 +1,188 @@
-<!-- INÍCIO DO CABEÇALHO -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rede Fidelidade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        /* INÍCIO DO ESTILO PERSONALIZADO */
+        body {
+            background-color: #000; /* Fundo preto */
+            color: #fff;
+        }
+
+        .bg-dark {
+            background-color: #000 !important; /* Fundo preto no menu */
+        }
+
+        .logo-container img {
+            border-radius: 50%; /* Logo redonda */
+            border: 3px solid #fff; /* Borda branca */
+            max-height: 150px;
+            width: auto;
+        }
+
+        .logo-container h1 {
+            font-size: 3.5rem; /* Tamanho maior do nome da Rede */
+            margin: 0;
+            color: #fff;
+        }
+
+        .logo-container p {
+            font-size: 1.8rem;
+            color: #d4af37; /* Cor dourada */
+            margin: 0;
+        }
+
+        .carousel-inner img {
+            width: 100%;
+            height: 400px; /* Altura para os banners */
+            object-fit: cover;
+        }
+
+        .btn-radio {
+            background-color: #d9534f;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .btn-radio:hover {
+            background-color: #c9302c;
+        }
+
+        .footer {
+            background-color: #111;
+            padding: 20px;
+        }
+
+        .footer a {
+            color: #d4af37; /* Links dourados */
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer .contact-info {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            color: #d4af37;
+        }
+
+        .footer .social-links img {
+            width: 30px;
+            margin: 0 10px;
+        }
+
+        /* Estilo para as logos de redes sociais */
+        .social-logos {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 200px;
+            overflow: hidden;
+        }
+
+        .social-logo {
+            width: 30px;
+            height: 30px;
+            margin: 0 5px;
+            opacity: 0.5;
+        }
+
+        .social-logo:hover {
+            opacity: 1;
+        }
+
+        /* Estilo para alternar as logos */
+        @keyframes logoCycle {
+            0% { transform: translateX(0); }
+            33% { transform: translateX(-100%); }
+            66% { transform: translateX(-200%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Animação para o ciclo das logos */
+        #social-logos {
+            animation: logoCycle 60s infinite;
+        }
+
+        .video-carousel-container {
+            position: relative;
+            margin-top: 30px;
+        }
+
+        .video-carousel {
+            display: flex;
+            gap: 15px;
+            overflow: hidden;
+        }
+
+        .video-carousel iframe {
+            width: 300px;
+            height: 200px;
+            border: none;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .carousel-btn.left {
+            left: 0;
+        }
+
+        .carousel-btn.right {
+            right: 0;
+        }
+
+        .daily-messages {
+            padding: 20px;
+            background-color: #222;
+            color: #d4af37;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        .contact-section {
+            padding: 30px;
+            background-color: #111;
+            color: #d4af37;
+            border-top: 2px solid #444;
+        }
+
+        .contact-section h5 {
+            color: #fff;
+        }
+
+        .contact-section input {
+            margin-bottom: 10px;
+        }
+
+        .contact-section .btn {
+            background-color: #d9534f;
+            color: #fff;
+        }
+
+        /* Fim do estilo personalizado */
+    </style>
+</head>
+<body>
+
+   <!-- INÍCIO DO CABEÇALHO -->
 <header class="bg-dark text-white py-4">
     <div class="container d-flex align-items-center justify-content-between">
         <div class="d-flex align-items-center">
@@ -20,7 +204,219 @@
             <button class="btn" style="background-color: #d4af37; color: #000; font-weight: bold;" id="audioButton">
                 Ouça ao Vivo
             </button>
+        </nav>
+    </div>
+</header>
+<!-- FIM DO CABEÇALHO -->
 
+
+    <!-- INÍCIO DO BANNER ROTATIVO -->
+    <section id="banner" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="banner1.png" alt="Banner 1">
+            </div>
+            <div class="carousel-item">
+                <img src="banner2.png" alt="Banner 2">
+            </div>
+            <div class="carousel-item">
+                <img src="banner3.png" alt="Banner 3">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#banner" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </a>
+        <a class="carousel-control-next" href="#banner" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </a>
+    </section>
+    <!-- FIM DO BANNER ROTATIVO -->
+
+    <!-- INÍCIO DAS MENSAGENS DO DIA -->
+    <section class="daily-messages">
+        <div class="container text-center">
+            <h3>Mensagem do Dia</h3>
+            <p>“Confie no Senhor de todo o coração e não se apoie em seu próprio entendimento.”</p>
+            <p class="text-muted">Provérbios 3:5</p>
+        </div>
+    </section>
+    <!-- FIM DAS MENSAGENS DO DIA -->
+
+    <!-- INÍCIO DO CONTATO E CADASTRO -->
+    <section class="contact-section">
+        <div class="container text-center">
+            <h5>Cadastre-se e participe de promoções</h5>
+            <form>
+                <input type="email" class="form-control" placeholder="Seu melhor email*" required>
+                <input type="tel" class="form-control" placeholder="Seu telefone WhatsApp*" required>
+                <button type="submit" class="btn w-100">Cadastre-se</button>
+            </form>
+        </div>
+    </section>
+    <!-- FIM DO CONTATO E CADASTRO -->
+
+    <!-- INÍCIO DA PROGRAMAÇÃO -->
+    <section id="programacao" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Programação</h2>
+            <div class="video-carousel-container">
+                <button class="carousel-btn left" onclick="scrollLeft()">&#9664;</button>
+                <div class="video-carousel">
+                    <iframe src="https://www.youtube.com/embed/FMtFziNEcsw" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/esyniEFeUhA" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/9VT_jyYkM-g" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/914EvDv7x0A" allowfullscreen></iframe>
+                </div>
+                <button class="carousel-btn right" onclick="scrollRight()">&#9654;</button>
+            </div>
+        </div>
+    </section>
+    <!-- FIM DA PROGRAMAÇÃO -->
+
+    <!-- INÍCIO DO RODAPÉ -->
+    <footer class="footer text-white">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="dourado mb-0">© 2024 Rede Fidelidade - Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Desenvolvido por <a href="#" class="dourado">G3 Produções</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- FIM DO RODAPÉ -->
+
+    <script>
+        const iframes = document.querySelectorAll('.video-carousel iframe');
+        const audioButton = document.getElementById('audioButton');
+        let audioPlaying = false;
+
+        audioButton.addEventListener('click', () => {
+            audioPlaying = !audioPlaying;
+            stopAllVideos();
+            alert(audioPlaying ? 'Reproduzindo áudio ao vivo...' : 'Áudio ao vivo pausado.');
+        });
+
+        function stopAllVideos() {
+            iframes.forEach(iframe => {
+                iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+            });
+        }
+
+        function scrollLeft() {
+            const carousel = document.querySelector('.video-carousel');
+            carousel.scrollBy({ left: -320, behavior: 'smooth' });
+        }
+
+        function scrollRight() {
+            const carousel = document.querySelector('.video-carousel');
+            carousel.scrollBy({ left: 320, behavior: 'smooth' });
+        }
+    </script><script>
+    // Variáveis de controle
+    let audioPlaying = false;
+    let player; // Player do áudio ao vivo
+    let activeVideo; // Vídeo ativo (se houver)
+
+    // Função para inicializar o player de áudio
+    function initializeAudioPlayer() {
+        // Cria um iframe com a URL do áudio ao vivo (URL do áudio em streaming)
+        const liveAudioUrl = "https://www.youtube.com/embed/FMtFziNEcsw?autoplay=1"; // Altere com o link correto
+        player = document.createElement('iframe');
+        player.setAttribute('src', liveAudioUrl);
+        player.setAttribute('frameborder', '0');
+        player.setAttribute('allow', 'autoplay');
+        player.setAttribute('style', 'display:none;');
+        document.body.appendChild(player);
+    }
+
+    // Função para alternar entre o áudio ao vivo e o vídeo
+    function toggleLiveAudio() {
+        if (audioPlaying) {
+            // Se o áudio ao vivo já estiver tocando, pare-o
+            stopLiveAudio();
+        } else {
+            // Se o áudio não estiver tocando, inicie a transmissão ao vivo
+            startLiveAudio();
+        }
+    }
+
+    // Função para iniciar o áudio ao vivo
+    function startLiveAudio() {
+        audioPlaying = true;
+        stopAllVideos();  // Pausa qualquer vídeo em reprodução
+        player.style.display = 'block'; // Exibe o player de áudio
+        alert('Reproduzindo áudio ao vivo!');
+    }
+
+    // Função para parar o áudio ao vivo
+    function stopLiveAudio() {
+        audioPlaying = false;
+        player.style.display = 'none'; // Esconde o player de áudio
+        alert('Áudio ao vivo pausado!');
+    }
+
+    // Função para parar todos os vídeos ao mesmo tempo
+    function stopAllVideos() {
+        const iframes = document.querySelectorAll('iframe');
+        iframes.forEach(iframe => {
+            const player = iframe.contentWindow;
+            if (player.postMessage) {
+                player.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+            }
+        });
+    }
+
+    // Função para pausar o áudio ao vivo quando um vídeo for reproduzido
+    function handleVideoPlay() {
+        if (audioPlaying) {
+            stopLiveAudio();
+        }
+    }
+
+    // Eventos de clique para o botão "Ouça ao Vivo"
+    document.getElementById('audioButton').addEventListener('click', toggleLiveAudio);
+
+    // Adiciona eventos aos iframes dos vídeos para pausar o áudio ao vivo
+    document.querySelectorAll('iframe').forEach(iframe => {
+        iframe.addEventListener('play', handleVideoPlay);
+    });
+
+    // Inicializa o player de áudio
+    initializeAudioPlayer();
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 
 
