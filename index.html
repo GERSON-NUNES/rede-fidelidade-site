@@ -35,6 +35,40 @@
             margin: 0;
         }
 
+        /* Estilo para as logos de redes sociais */
+.social-logos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px; /* Ajuste a largura conforme necessário */
+    overflow: hidden;
+}
+
+.social-logo {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.social-logo:hover {
+    opacity: 1; /* Aumenta a opacidade ao passar o mouse */
+}
+
+/* Estilo para alternar as logos */
+@keyframes logoCycle {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+}
+
+/* Animação para o ciclo das logos */
+#social-logos {
+    animation: logoCycle 60s infinite; /* Altere o tempo para 20 segundos por ciclo */
+}
+
         .carousel-inner img {
             width: 100%;
             height: 400px; /* Altura para os banners */
@@ -150,6 +184,7 @@
 <!-- INÍCIO DO CABEÇALHO -->
 <header class="bg-dark text-white py-4">
     <div class="container d-flex align-items-center justify-content-between">
+        <!-- Logotipo e Nome -->
         <div class="d-flex align-items-center">
             <div class="logo-container me-3">
                 <img src="logo.png" alt="Logo Rede Fidelidade" class="img-fluid">
@@ -159,6 +194,7 @@
                 <p>Conexão Além das Redes Sociais</p>
             </div>
         </div>
+        <!-- Menu -->
         <nav>
             <ul class="nav">
                 <li class="nav-item"><a href="#home" class="nav-link text-white">Home</a></li>
@@ -166,13 +202,29 @@
                 <li class="nav-item"><a href="#noticias" class="nav-link text-white">Notícias</a></li>
                 <li class="nav-item"><a href="#contato" class="nav-link text-white">Contato</a></li>
             </ul>
+            <!-- Botão "Ouça ao Vivo" -->
             <button class="btn" style="background-color: #d4af37; color: #000; font-weight: bold;" id="audioButton">
                 Ouça ao Vivo
             </button>
+            <!-- Logos das Redes Sociais -->
+            <div class="social-logos ms-3" id="social-logos">
+                <img src="facebook-icon.png" alt="Facebook" class="social-logo">
+                <img src="instagram-icon.png" alt="Instagram" class="social-logo">
+                <img src="youtube-icon.png" alt="YouTube" class="social-logo">
+                <img src="twitter-icon.png" alt="Twitter" class="social-logo">
+                <img src="linkedin-icon.png" alt="LinkedIn" class="social-logo">
+                <img src="whatsapp-icon.png" alt="WhatsApp" class="social-logo">
+                <img src="tiktok-icon.png" alt="TikTok" class="social-logo">
+                <img src="pinterest-icon.png" alt="Pinterest" class="social-logo">
+                <img src="snapchat-icon.png" alt="Snapchat" class="social-logo">
+                <img src="tumblr-icon.png" alt="Tumblr" class="social-logo">
+                <img src="vimeo-icon.png" alt="Vimeo" class="social-logo">
+            </div>
         </nav>
     </div>
 </header>
 <!-- FIM DO CABEÇALHO -->
+
 <script>
     // Variáveis de controle
     let audioPlaying = false;
