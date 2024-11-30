@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rede Fidelidade</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        
+
+
         /* INÍCIO DO ESTILO PERSONALIZADO */
         body {
             background-color: #000; /* Fundo preto */
@@ -25,13 +27,13 @@
         }
 
         .logo-container h1 {
-            font-size: 3.5rem; /* Tamanho maior do nome da Rede */
+            font-size: 4.5rem; /* Tamanho maior do nome da Rede */
             margin: 0;
             color: #fff;
         }
 
         .logo-container p {
-            font-size: 1.8rem;
+            font-size: 2.0rem;
             color: #d4af37; /* Cor dourada */
             margin: 0;
         }
@@ -80,7 +82,6 @@
             margin: 0 10px;
         }
 
-        /* Estilo para as logos de redes sociais */
         .social-logos {
             display: flex;
             align-items: center;
@@ -108,7 +109,6 @@
             100% { transform: translateX(0); }
         }
 
-        /* Animação para o ciclo das logos */
         #social-logos {
             animation: logoCycle 60s infinite;
         }
@@ -122,6 +122,7 @@
             display: flex;
             gap: 15px;
             overflow: hidden;
+            transition: transform 0.5s ease;
         }
 
         .video-carousel iframe {
@@ -177,13 +178,29 @@
             background-color: #d9534f;
             color: #fff;
         }
+        
+        .social-links {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            color: #d4af37;
+            font-size: 2rem;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #fff;
+        }
 
         /* Fim do estilo personalizado */
     </style>
 </head>
 <body>
 
-   <!-- INÍCIO DO CABEÇALHO -->
+<!-- INÍCIO DO CABEÇALHO -->
 <header class="bg-dark text-white py-4">
     <div class="container d-flex align-items-center justify-content-between">
         <div class="d-flex align-items-center">
@@ -211,54 +228,51 @@
 </header>
 <!-- FIM DO CABEÇALHO -->
 
-
-    
-    <!-- INÍCIO DO BANNER ROTATIVO -->
-    <section id="banner" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="banner1.png" alt="Banner 1">
-            </div>
-            <div class="carousel-item">
-                <img src="banner2.png" alt="Banner 2">
-            </div>
-            <div class="carousel-item">
-                <img src="banner3.png" alt="Banner 3">
-            </div>
+<!-- INÍCIO DO BANNER ROTATIVO -->
+<section id="banner" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://github.com/usuario/repository/raw/main/images/banner1.png.webp" alt="Banner 1" class="d-block w-100">
         </div>
-        <a class="carousel-control-prev" href="#banner" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </a>
-        <a class="carousel-control-next" href="#banner" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </a>
-    </section>
-    <!-- FIM DO BANNER ROTATIVO -->
-
-
-    
-   
-    <!-- INÍCIO DA PROGRAMAÇÃO -->
-    <section id="programacao" class="py-5">
-        <div class="container">
-            <h2 class="text-center">Programação</h2>
-            <div class="video-carousel-container">
-                <button class="carousel-btn left" onclick="scrollLeft()">&#9664;</button>
-                <div class="video-carousel">
-                    <iframe src="https://www.youtube.com/embed/FMtFziNEcsw" allowfullscreen></iframe>
-                    <iframe src="https://www.youtube.com/embed/esyniEFeUhA" allowfullscreen></iframe>
-                    <iframe src="https://www.youtube.com/embed/9VT_jyYkM-g" allowfullscreen></iframe>
-                    <iframe src="https://www.youtube.com/embed/914EvDv7x0A" allowfullscreen></iframe>
-                </div>
-                <button class="carousel-btn right" onclick="scrollRight()">&#9654;</button>
-            </div>
+        <div class="carousel-item">
+            <img src="https://github.com/usuario/repository/raw/main/images/banner2.png.webp" alt="Banner 2" class="d-block w-100">
         </div>
-    </section>
-    <!-- FIM DA PROGRAMAÇÃO -->
+        <div class="carousel-item">
+            <img src="https://github.com/usuario/repository/raw/main/images/banner3.png.webp" alt="Banner 3" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+            <img src="https://github.com/usuario/repository/raw/main/images/banner4.png.webp" alt="Banner 4" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+            <img src="https://github.com/usuario/repository/raw/main/images/banner5.png.webp" alt="Banner 5" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+            <img src="https://github.com/usuario/repository/raw/main/images/banner6.png.webp" alt="Banner 6" class="d-block w-100">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#banner" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#banner" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </a>
+</section>
+<!-- FIM DO BANNER ROTATIVO -->
 
+<!-- INÍCIO DA SEÇÃO DE VÍDEOS -->
+<section id="programacao" class="video-carousel-container">
+    <div class="video-carousel">
+        <!-- Exemplo de vídeo do YouTube incorporado -->
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <button class="carousel-btn left" onclick="moveCarousel('left')">❮</button>
+    <button class="carousel-btn right" onclick="moveCarousel('right')">❯</button>
+</section>
 
-    
- 
  <!-- INÍCIO DAS NOTICIAS DO DIA -->
 <section id="noticias" class="noticias">
     <div class="container">
@@ -281,129 +295,80 @@
 </section>
 <!-- FIM DAS NOTICIAS DO DI -->
 
-    
-    <!-- INÍCIO DAS MENSAGENS DO DIA -->
-    <section class="daily-messages">
-        <div class="container text-center">
-            <h3>Mensagem do Dia</h3>
-            <p>“Confie no Senhor de todo o coração e não se apoie em seu próprio entendimento.”</p>
-            <p class="text-muted">Provérbios 3:5</p>
+
+<!-- INÍCIO DA SEÇÃO DE MENSAGENS -->
+<section class="daily-messages">
+    <h4>Mensagem do Dia:</h4>
+    <p id="message"></p>
+</section>
+
+<!-- INÍCIO DO RODAPÉ -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="contact-info">
+                    <p><strong>Contato:</strong></p>
+                    <p>Email: contato@redefidelidade.com.br</p>
+                    <p>Telefone: +55 11 1234-5678</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="social-links">
+                    <a href="https://www.facebook.com/redefidelidade" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/redefidelidade" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com/redefidelidade" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/redefidelidade" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
         </div>
-    </section>
-    <!-- FIM DAS MENSAGENS DO DIA -->
+    </div>
+</footer>
+<!-- FIM DO RODAPÉ -->
 
-    <!-- INÍCIO DO CONTATO E CADASTRO -->
-    <section class="contact-section">
-        <div class="container text-center">
-            <h5>Cadastre-se e participe de promoções</h5>
-            <form id="signupForm">
-                <input type="email" class="form-control" id="email" placeholder="Seu melhor email*" required>
-                <input type="tel" class="form-control" id="phone" placeholder="Seu telefone WhatsApp*" required>
-                <button type="submit" class="btn w-100">Cadastre-se</button>
-            </form>
-        </div>
-    </section>
-    <!-- FIM DO CONTATO E CADASTRO -->
-
- 
-
-
+<!-- SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 <script>
-    const apiKey = 'SUA_CHAVE_DA_API'; // Substitua pela sua chave da API
-    const channelId = 'UC0nyJtP2b0XxLFbKRA9B9bA'; // ID do canal da Rede Fidelidade (alterar conforme necessário)
-    const maxResults = 6; // Número máximo de vídeos a serem exibidos
-
-    // Função para buscar vídeos do canal
-    async function fetchVideos() {
-        const url = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&order=date&maxResults=${maxResults}&part=snippet`;
-        
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-            const videos = data.items;
-
-            // Adicionar vídeos ao carrossel
-            const videoContainer = document.getElementById('video-container');
-            videoContainer.innerHTML = ''; // Limpa a lista de vídeos existente
-
-            videos.forEach(video => {
-                const videoId = video.id.videoId;
-                const iframe = document.createElement('iframe');
-                iframe.src = `https://www.youtube.com/embed/${videoId}`;
-                iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
-                iframe.allowFullscreen = true;
-                videoContainer.appendChild(iframe);
-            });
-        } catch (error) {
-            console.error('Erro ao buscar vídeos:', error);
+    // Áudio ao vivo
+    let audioPlaying = false;
+    let liveAudio = new Audio('path_to_audio.mp3');
+    document.getElementById("audioButton").addEventListener("click", function () {
+        if (audioPlaying) {
+            liveAudio.pause();
+            this.innerText = "Ouça ao Vivo";
+        } else {
+            liveAudio.play();
+            this.innerText = "Pausar Ao Vivo";
         }
+        audioPlaying = !audioPlaying;
+    });
+
+    // Carrossel de Vídeos
+    let currentIndex = 0;
+    const videos = document.querySelectorAll('.video-carousel iframe');
+
+    function moveCarousel(direction) {
+        if (direction === 'left') {
+            currentIndex = (currentIndex === 0) ? videos.length - 1 : currentIndex - 1;
+        } else {
+            currentIndex = (currentIndex === videos.length - 1) ? 0 : currentIndex + 1;
+        }
+        document.querySelector('.video-carousel').style.transform = `translateX(-${currentIndex * 320}px)`;
     }
 
-    // Carregar vídeos assim que a página carregar
-    window.onload = fetchVideos;
+    // Mensagens do dia
+    const messages = [
+        "Que a paz de Cristo seja contigo!",
+        "O Senhor é o meu pastor, nada me faltará.",
+        "A fé move montanhas!",
+        "Que a graça de Deus esteja sobre sua vida hoje.",
+        "Confie no Senhor de todo o coração.",
+    ];
+    document.getElementById("message").textContent = messages[Math.floor(Math.random() * messages.length)];
 </script>
-
-
-    <!-- INÍCIO DO RODAPÉ -->
-    <footer class="footer text-center">
-        <div class="container">
-            <div class="contact-info">
-                <p>Contato: contato@rededefidelidade.com.br</p>
-            </div>
-            <div class="social-links">
-                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-            <p>© 2024 Rede Fidelidade - Todos os direitos reservados</p>
-        </div>
-    </footer>
-    <!-- FIM DO RODAPÉ -->
-
-    <script>
-        // Função de áudio ao vivo
-        var audioPlaying = false;
-        document.getElementById("audioButton").addEventListener("click", function () {
-            if (audioPlaying) {
-                // Pause audio
-                document.getElementById("liveAudio").pause();
-                this.innerText = "Ouça ao Vivo";
-            } else {
-                // Play audio
-                var audio = new Audio('path_to_audio.mp3'); 
-                audio.id = 'liveAudio';
-                audio.play();
-                this.innerText = "Pausar Ao Vivo";
-            }
-            audioPlaying = !audioPlaying;
-        });
-
-        // Função para mover os vídeos para a esquerda e direita
-        function moveCarousel(direction) {
-            var carousel = document.querySelector('.video-carousel');
-            if (direction === 'left') {
-                carousel.style.transform = 'translateX(0)';
-            } else {
-                carousel.style.transform = 'translateX(-100%)';
-            }
-        }
-
-        // Validação do formulário de cadastro
-        document.getElementById("signupForm").addEventListener("submit", function(event) {
-            var email = document.getElementById("email").value;
-            var phone = document.getElementById("phone").value;
-            
-            if (!email || !phone) {
-                alert("Por favor, preencha todos os campos obrigatórios.");
-                event.preventDefault();
-            }
-        });
-    </script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
 </body>
 </html>
+
 
 
 
