@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rede Fidelidade</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <style>
-        
         /* INÍCIO DO ESTILO PERSONALIZADO */
         body {
-            background-color: #000; /* Fundo preto */
+            background-color: #000;
             color: #fff;
         }
 
         .bg-dark {
-            background-color: #000 !important; /* Fundo preto no menu */
+            background-color: #000 !important;
         }
 
         .logo-container img {
-            border-radius: 50%; /* Logo redonda */
-            border: 3px solid #fff; /* Borda branca */
+            border-radius: 50%;
+            border: 3px solid #fff;
             max-height: 150px;
             width: auto;
         }
 
         .logo-container h1 {
-            font-size: 3.5rem; /* Tamanho maior do nome da Rede */
-            margin: 0;
+            font-size: 3.5rem;
             color: #fff;
+            margin: 0;
         }
 
         .logo-container p {
             font-size: 1.8rem;
-            color: #d4af37; /* Cor dourada */
+            color: #d4af37;
             margin: 0;
         }
 
         .carousel-inner img {
             width: 100%;
-            height: 400px; /* Altura para os banners */
+            height: 400px;
             object-fit: cover;
         }
 
@@ -61,7 +61,7 @@
         }
 
         .footer a {
-            color: #d4af37; /* Links dourados */
+            color: #d4af37;
             text-decoration: none;
         }
 
@@ -73,44 +73,6 @@
             font-size: 0.9rem;
             margin-bottom: 10px;
             color: #d4af37;
-        }
-
-        .footer .social-links img {
-            width: 30px;
-            margin: 0 10px;
-        }
-
-        /* Estilo para as logos de redes sociais */
-        .social-logos {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 200px;
-            overflow: hidden;
-        }
-
-        .social-logo {
-            width: 30px;
-            height: 30px;
-            margin: 0 5px;
-            opacity: 0.5;
-        }
-
-        .social-logo:hover {
-            opacity: 1;
-        }
-
-        /* Estilo para alternar as logos */
-        @keyframes logoCycle {
-            0% { transform: translateX(0); }
-            33% { transform: translateX(-100%); }
-            66% { transform: translateX(-200%); }
-            100% { transform: translateX(0); }
-        }
-
-        /* Animação para o ciclo das logos */
-        #social-logos {
-            animation: logoCycle 60s infinite;
         }
 
         .video-carousel-container {
@@ -177,42 +139,37 @@
             background-color: #d9534f;
             color: #fff;
         }
-
-        /* Fim do estilo personalizado */
+        /* FIM DO ESTILO PERSONALIZADO */
     </style>
 </head>
+
 <body>
-
-   <!-- INÍCIO DO CABEÇALHO -->
-<header class="bg-dark text-white py-4">
-    <div class="container d-flex align-items-center justify-content-between">
-        <div class="d-flex align-items-center">
-            <div class="logo-container me-3">
-                <img src="logo.png" alt="Logo Rede Fidelidade" class="img-fluid">
+    <!-- INÍCIO DO CABEÇALHO -->
+    <header class="bg-dark text-white py-4">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <div class="logo-container me-3">
+                    <img src="logotipo.png" alt="Logo Rede Fidelidade" class="img-fluid">
+                </div>
+                <div>
+                    <h1>Rede Fidelidade</h1>
+                    <p>Conexão Além das Redes Sociais</p>
+                </div>
             </div>
-            <div>
-                <h1>Rede Fidelidade</h1>
-                <p>Além das Redes Sociais</p>
-            </div>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a href="#home" class="nav-link text-white">Home</a></li>
+                    <li class="nav-item"><a href="#programacao" class="nav-link text-white">Programação</a></li>
+                    <li class="nav-item"><a href="#noticias" class="nav-link text-white">Notícias</a></li>
+                    <li class="nav-item"><a href="#contato" class="nav-link text-white">Contato</a></li>
+                    <li class="nav-item"><a href="#rede" class="nav-link text-white">REDE</a></li>
+                </ul>
+                <button class="btn" style="background-color: #d4af37; color: #000; font-weight: bold;" id="audioButton">Ouça ao Vivo</button>
+            </nav>
         </div>
-        <nav>
-            <ul class="nav">
-                <li class="nav-item"><a href="#home" class="nav-link text-white">Home</a></li>
-                <li class="nav-item"><a href="#programacao" class="nav-link text-white">Programação</a></li>
-                <li class="nav-item"><a href="#noticias" class="nav-link text-white">Notícias</a></li>
-                <li class="nav-item"><a href="#contato" class="nav-link text-white">Contato</a></li>
-                <li class="nav-item"><a href="#rede" class="nav-link text-white">REDE</a></li>
-            </ul>
-            <button class="btn" style="background-color: #d4af37; color: #000; font-weight: bold;" id="audioButton">
-                Ouça ao Vivo
-            </button>
-        </nav>
-    </div>
-</header>
-<!-- FIM DO CABEÇALHO -->
+    </header>
+    <!-- FIM DO CABEÇALHO -->
 
-
-    
     <!-- INÍCIO DO BANNER ROTATIVO -->
     <section id="banner" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -235,53 +192,24 @@
     </section>
     <!-- FIM DO BANNER ROTATIVO -->
 
-
-    
-   
-    <!-- INÍCIO DA PROGRAMAÇÃO -->
+      <!-- INÍCIO DA PROGRAMAÇÃO -->
     <section id="programacao" class="py-5">
         <div class="container">
             <h2 class="text-center">Programação</h2>
             <div class="video-carousel-container">
-                <button class="carousel-btn left" onclick="scrollLeft()">&#9664;</button>
+                <button class="carousel-btn left" onclick="scrollLeft()">◀</button>
                 <div class="video-carousel">
                     <iframe src="https://www.youtube.com/embed/FMtFziNEcsw" allowfullscreen></iframe>
                     <iframe src="https://www.youtube.com/embed/esyniEFeUhA" allowfullscreen></iframe>
                     <iframe src="https://www.youtube.com/embed/9VT_jyYkM-g" allowfullscreen></iframe>
                     <iframe src="https://www.youtube.com/embed/914EvDv7x0A" allowfullscreen></iframe>
                 </div>
-                <button class="carousel-btn right" onclick="scrollRight()">&#9654;</button>
+                <button class="carousel-btn right" onclick="scrollRight()">▶</button>
             </div>
         </div>
     </section>
     <!-- FIM DA PROGRAMAÇÃO -->
 
-
-    
- 
- <!-- INÍCIO DAS NOTICIAS DO DIA -->
-<section id="noticias" class="noticias">
-    <div class="container">
-        <h2>Notícias e Atualizações</h2>
-        <div class="news-grid">
-            <div class="news-card">
-                <img src="noticia1.jpg" alt="Notícia 1">
-                <h3>Evento Especial: Conexão da Fé</h3>
-                <p>Confira os destaques do evento mais aguardado do ano, trazendo mensagens de esperança e fé.</p>
-                <a href="#" class="btn btn-secondary">Leia Mais</a>
-            </div>
-            <div class="news-card">
-                <img src="noticia2.jpg" alt="Notícia 2">
-                <h3>Rede Fidelidade Expande Audiência</h3>
-                <p>Conheça os novos programas e horários que prometem impactar vidas.</p>
-                <a href="#" class="btn btn-secondary">Leia Mais</a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- FIM DAS NOTICIAS DO DI -->
-
-    
     <!-- INÍCIO DAS MENSAGENS DO DIA -->
     <section class="daily-messages">
         <div class="container text-center">
@@ -296,114 +224,55 @@
     <section class="contact-section">
         <div class="container text-center">
             <h5>Cadastre-se e participe de promoções</h5>
-            <form id="signupForm">
-                <input type="email" class="form-control" id="email" placeholder="Seu melhor email*" required>
-                <input type="tel" class="form-control" id="phone" placeholder="Seu telefone WhatsApp*" required>
+            <form>
+                <input type="email" class="form-control" placeholder="Seu melhor email*" required>
+                <input type="tel" class="form-control" placeholder="Seu telefone WhatsApp*" required>
                 <button type="submit" class="btn w-100">Cadastre-se</button>
             </form>
         </div>
     </section>
     <!-- FIM DO CONTATO E CADASTRO -->
 
- 
-
-
-<script>
-    const apiKey = 'SUA_CHAVE_DA_API'; // Substitua pela sua chave da API
-    const channelId = 'UC0nyJtP2b0XxLFbKRA9B9bA'; // ID do canal da Rede Fidelidade (alterar conforme necessário)
-    const maxResults = 6; // Número máximo de vídeos a serem exibidos
-
-    // Função para buscar vídeos do canal
-    async function fetchVideos() {
-        const url = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&order=date&maxResults=${maxResults}&part=snippet`;
-        
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-            const videos = data.items;
-
-            // Adicionar vídeos ao carrossel
-            const videoContainer = document.getElementById('video-container');
-            videoContainer.innerHTML = ''; // Limpa a lista de vídeos existente
-
-            videos.forEach(video => {
-                const videoId = video.id.videoId;
-                const iframe = document.createElement('iframe');
-                iframe.src = `https://www.youtube.com/embed/${videoId}`;
-                iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
-                iframe.allowFullscreen = true;
-                videoContainer.appendChild(iframe);
-            });
-        } catch (error) {
-            console.error('Erro ao buscar vídeos:', error);
-        }
-    }
-
-    // Carregar vídeos assim que a página carregar
-    window.onload = fetchVideos;
-</script>
-
+  
 
     <!-- INÍCIO DO RODAPÉ -->
-    <footer class="footer text-center">
-        <div class="container">
-            <div class="contact-info">
-                <p>Contato: contato@rededefidelidade.com.br</p>
+    <footer class="footer text-white">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2024 Rede Fidelidade - Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Desenvolvido por <a href="#" class="text-decoration-none">G3 Produções</a></p>
+                </div>
             </div>
-            <div class="social-links">
-                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-            <p>© 2024 Rede Fidelidade - Todos os direitos reservados</p>
         </div>
     </footer>
     <!-- FIM DO RODAPÉ -->
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Função de áudio ao vivo
-        var audioPlaying = false;
-        document.getElementById("audioButton").addEventListener("click", function () {
-            if (audioPlaying) {
-                // Pause audio
-                document.getElementById("liveAudio").pause();
-                this.innerText = "Ouça ao Vivo";
-            } else {
-                // Play audio
-                var audio = new Audio('path_to_audio.mp3'); 
-                audio.id = 'liveAudio';
-                audio.play();
-                this.innerText = "Pausar Ao Vivo";
-            }
+        // Botão de áudio ao vivo
+        const audioButton = document.getElementById('audioButton');
+        let audioPlaying = false;
+
+        audioButton.addEventListener('click', () => {
             audioPlaying = !audioPlaying;
+            alert(audioPlaying ? 'Reproduzindo áudio ao vivo...' : 'Áudio pausado.');
         });
 
-        // Função para mover os vídeos para a esquerda e direita
-        function moveCarousel(direction) {
-            var carousel = document.querySelector('.video-carousel');
-            if (direction === 'left') {
-                carousel.style.transform = 'translateX(0)';
-            } else {
-                carousel.style.transform = 'translateX(-100%)';
-            }
+        function scrollLeft() {
+            document.querySelector('.video-carousel').scrollBy({ left: -320, behavior: 'smooth' });
         }
 
-        // Validação do formulário de cadastro
-        document.getElementById("signupForm").addEventListener("submit", function(event) {
-            var email = document.getElementById("email").value;
-            var phone = document.getElementById("phone").value;
-            
-            if (!email || !phone) {
-                alert("Por favor, preencha todos os campos obrigatórios.");
-                event.preventDefault();
-            }
-        });
+        function scrollRight() {
+            document.querySelector('.video-carousel').scrollBy({ left: 320, behavior: 'smooth' });
+        }
     </script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
 </body>
+
 </html>
+
 
 
 
