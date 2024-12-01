@@ -150,13 +150,21 @@
         .carousel-btn.right {
             right: 0;
         }
-
+        
         .daily-messages {
-            padding: 20px;
-            background-color: #222;
-            color: #d4af37;
-            margin-top: 20px;
-            border-radius: 10px;
+    background-color: #222; /* Fundo escuro */
+    color: #d4af37; /* Texto dourado */
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center; /* Centraliza tudo */
+}
+
+#titulo-mensagem {
+    font-size: 2rem; /* Tamanho maior para o título */
+    margin-bottom: 15px; /* Espaço abaixo do título */
+    color: #d4af37; /* Cor dourada */
+}         
         }
 
         .contact-section {
@@ -291,7 +299,7 @@
     <button class="carousel-btn right" onclick="moveCarousel('right')">❯</button>
 </section>
 
-
+<!-- FIM DA SEÇÃO DE VÍDEOS -->
 
     
  <!-- INÍCIO DAS NOTICIAS DO DIA -->
@@ -314,15 +322,19 @@
         </div>
     </div>
 </section>
-<!-- FIM DAS NOTICIAS DO DI -->
+<!-- FIM DAS NOTICIAS DO DIA -->
 
 
-<!-- INÍCIO DA SEÇÃO DE MENSAGENS -->
-<section class="daily-messages">
-    <h4>Mensagem do Dia:</h4>
-    <p id="message"></p>
+<!-- INÍCIO DAS MENSAGENS DO DIA -->
+<section class="daily-messages text-center py-4">
+    <div class="container">
+        <h3 id="titulo-mensagem" class="dourado">Mensagem do Dia</h3>
+        <p id="mensagem" style="font-size: 1.5rem; margin-top: 10px;"></p>
+        <p id="referencia" class="text-muted" style="font-size: 1.2rem; margin-top: 5px;"></p>
+    </div>
 </section>
-
+<!-- FIM DAS MENSAGENS DO DIA -->
+    
 <!-- INÍCIO DO RODAPÉ -->
 <footer class="footer text-white">
         <div class="container">
@@ -393,16 +405,28 @@
         document.querySelector('.video-carousel').style.transform = `translateX(-${currentIndex * 320}px)`;
     }
 
-    // Mensagens do dia
-    const messages = [
-        "Que a paz de Cristo seja contigo!",
-        "O Senhor é o meu pastor, nada me faltará.",
-        "A fé move montanhas!",
-        "Que a graça de Deus esteja sobre sua vida hoje.",
-        "Confie no Senhor de todo o coração.",
+    <script>
+    // Lista de mensagens com referências
+    const mensagens = [
+        { texto: "Confie no Senhor de todo o coração.", referencia: "Provérbios 3:5" },
+        { texto: "O Senhor é o meu pastor; nada me faltará.", referencia: "Salmos 23:1" },
+        { texto: "Tudo posso naquele que me fortalece.", referencia: "Filipenses 4:13" },
+        { texto: "Entrega o teu caminho ao Senhor, confia nele, e ele tudo fará.", referencia: "Salmos 37:5" },
+        { texto: "Alegrem-se sempre no Senhor. Novamente direi: alegrem-se!", referencia: "Filipenses 4:4" },
     ];
-    document.getElementById("message").textContent = messages[Math.floor(Math.random() * messages.length)];
+
+    // Obtém o índice com base na data do dia
+    const dataAtual = new Date();
+    const indiceMensagem = dataAtual.getDate() % mensagens.length;
+
+    // Seleciona a mensagem e a referência
+    const mensagemAtual = mensagens[indiceMensagem];
+
+    // Insere a mensagem e a referência no HTML
+    document.getElementById('mensagem').textContent = mensagemAtual.texto;
+    document.getElementById('referencia').textContent = mensagemAtual.referencia;
 </script>
+
 </body>
 </html>
 
